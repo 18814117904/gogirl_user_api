@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.StoreManageMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.StoreManage" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="store_no" property="storeNo" jdbcType="VARCHAR" />
+    <result column="logo" property="logo" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="DECIMAL" />
+    <result column="latitude" property="latitude" jdbcType="DECIMAL" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="master" property="master" jdbcType="VARCHAR" />
+    <result column="employee_number" property="employeeNumber" jdbcType="INTEGER" />
+    <result column="customer_service_telphone" property="customerServiceTelphone" jdbcType="VARCHAR" />
+    <result column="contact_name" property="contactName" jdbcType="VARCHAR" />
+    <result column="contact_telphone" property="contactTelphone" jdbcType="VARCHAR" />
+    <result column="business_day" property="businessDay" jdbcType="INTEGER" />
+    <result column="business_start_time" property="businessStartTime" jdbcType="TIME" />
+    <result column="business_end_time" property="businessEndTime" jdbcType="TIME" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, store_no, logo, name, longitude, latitude, address, master, employee_number, 
+    customer_service_telphone, contact_name, contact_telphone, business_day, business_start_time, 
+    business_end_time, remark, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from store_manage
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from store_manage
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.StoreManage" >
+    insert into store_manage (id, store_no, logo, 
+      name, longitude, latitude, 
+      address, master, employee_number, 
+      customer_service_telphone, contact_name, contact_telphone, 
+      business_day, business_start_time, business_end_time, 
+      remark, create_time)
+    values (#{id,jdbcType=INTEGER}, #{storeNo,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{address,jdbcType=VARCHAR}, #{master,jdbcType=VARCHAR}, #{employeeNumber,jdbcType=INTEGER}, 
+      #{customerServiceTelphone,jdbcType=VARCHAR}, #{contactName,jdbcType=VARCHAR}, #{contactTelphone,jdbcType=VARCHAR}, 
+      #{businessDay,jdbcType=INTEGER}, #{businessStartTime,jdbcType=TIME}, #{businessEndTime,jdbcType=TIME}, 
+      #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.StoreManage" >
+    insert into store_manage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="storeNo != null" >
+        store_no,
+      </if>
+      <if test="logo != null" >
+        logo,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="master != null" >
+        master,
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number,
+      </if>
+      <if test="customerServiceTelphone != null" >
+        customer_service_telphone,
+      </if>
+      <if test="contactName != null" >
+        contact_name,
+      </if>
+      <if test="contactTelphone != null" >
+        contact_telphone,
+      </if>
+      <if test="businessDay != null" >
+        business_day,
+      </if>
+      <if test="businessStartTime != null" >
+        business_start_time,
+      </if>
+      <if test="businessEndTime != null" >
+        business_end_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeNo != null" >
+        #{storeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="master != null" >
+        #{master,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        #{employeeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="customerServiceTelphone != null" >
+        #{customerServiceTelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null" >
+        #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTelphone != null" >
+        #{contactTelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDay != null" >
+        #{businessDay,jdbcType=INTEGER},
+      </if>
+      <if test="businessStartTime != null" >
+        #{businessStartTime,jdbcType=TIME},
+      </if>
+      <if test="businessEndTime != null" >
+        #{businessEndTime,jdbcType=TIME},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.StoreManage" >
+    update store_manage
+    <set >
+      <if test="storeNo != null" >
+        store_no = #{storeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="master != null" >
+        master = #{master,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number = #{employeeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="customerServiceTelphone != null" >
+        customer_service_telphone = #{customerServiceTelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null" >
+        contact_name = #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTelphone != null" >
+        contact_telphone = #{contactTelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDay != null" >
+        business_day = #{businessDay,jdbcType=INTEGER},
+      </if>
+      <if test="businessStartTime != null" >
+        business_start_time = #{businessStartTime,jdbcType=TIME},
+      </if>
+      <if test="businessEndTime != null" >
+        business_end_time = #{businessEndTime,jdbcType=TIME},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.StoreManage" >
+    update store_manage
+    set store_no = #{storeNo,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=DECIMAL},
+      latitude = #{latitude,jdbcType=DECIMAL},
+      address = #{address,jdbcType=VARCHAR},
+      master = #{master,jdbcType=VARCHAR},
+      employee_number = #{employeeNumber,jdbcType=INTEGER},
+      customer_service_telphone = #{customerServiceTelphone,jdbcType=VARCHAR},
+      contact_name = #{contactName,jdbcType=VARCHAR},
+      contact_telphone = #{contactTelphone,jdbcType=VARCHAR},
+      business_day = #{businessDay,jdbcType=INTEGER},
+      business_start_time = #{businessStartTime,jdbcType=TIME},
+      business_end_time = #{businessEndTime,jdbcType=TIME},
+      remark = #{remark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

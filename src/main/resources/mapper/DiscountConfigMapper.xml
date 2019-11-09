@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.DiscountConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.DiscountConfig" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="total_charge" property="totalCharge" jdbcType="INTEGER" />
+    <result column="charge_amount" property="chargeAmount" jdbcType="INTEGER" />
+    <result column="bestow_amount" property="bestowAmount" jdbcType="INTEGER" />
+    <result column="discount" property="discount" jdbcType="DOUBLE" />
+    <result column="level" property="level" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, total_charge, charge_amount, bestow_amount, discount, level, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllDiscount" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount_config where id!=1
+  </select>
+  <select id="selectByTotalCharge" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount_config
+    where id = (select id from discount_config 
+        where #{totalCharge,jdbcType=INTEGER}>=total_charge 
+        order by total_charge desc limit 1)
+  </select>
+  <select id="selectByCharge" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount_config
+    where id = (select id from discount_config 
+        where #{amount,jdbcType=INTEGER}>=charge_amount 
+        order by charge_amount desc limit 1)
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from discount_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.DiscountConfig" >
+    insert into discount_config (id, total_charge, charge_amount, 
+      bestow_amount, discount, level, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{totalCharge,jdbcType=INTEGER}, #{chargeAmount,jdbcType=INTEGER}, 
+      #{bestowAmount,jdbcType=INTEGER}, #{discount,jdbcType=DOUBLE}, #{level,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.DiscountConfig" >
+    insert into discount_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="totalCharge != null" >
+        total_charge,
+      </if>
+      <if test="chargeAmount != null" >
+        charge_amount,
+      </if>
+      <if test="bestowAmount != null" >
+        bestow_amount,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="totalCharge != null" >
+        #{totalCharge,jdbcType=INTEGER},
+      </if>
+      <if test="chargeAmount != null" >
+        #{chargeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="bestowAmount != null" >
+        #{bestowAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=DOUBLE},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.DiscountConfig" >
+    update discount_config
+    <set >
+      <if test="totalCharge != null" >
+        total_charge = #{totalCharge,jdbcType=INTEGER},
+      </if>
+      <if test="chargeAmount != null" >
+        charge_amount = #{chargeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="bestowAmount != null" >
+        bestow_amount = #{bestowAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DOUBLE},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.DiscountConfig" >
+    update discount_config
+    set total_charge = #{totalCharge,jdbcType=INTEGER},
+      charge_amount = #{chargeAmount,jdbcType=INTEGER},
+      bestow_amount = #{bestowAmount,jdbcType=INTEGER},
+      discount = #{discount,jdbcType=DOUBLE},
+      level = #{level,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

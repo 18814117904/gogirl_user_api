@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CustomerWeiboMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CustomerWeibo" >
+    <id column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="screen_name" property="screenName" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="INTEGER" />
+    <result column="city" property="city" jdbcType="INTEGER" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="profileImage_url" property="profileimageUrl" jdbcType="VARCHAR" />
+    <result column="user_domain" property="userDomain" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="followers_count" property="followersCount" jdbcType="INTEGER" />
+    <result column="friends_count" property="friendsCount" jdbcType="INTEGER" />
+    <result column="statuses_count" property="statusesCount" jdbcType="INTEGER" />
+    <result column="favourites_count" property="favouritesCount" jdbcType="INTEGER" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="following" property="following" jdbcType="BIT" />
+    <result column="verified" property="verified" jdbcType="BIT" />
+    <result column="verified_type" property="verifiedType" jdbcType="INTEGER" />
+    <result column="allow_all_act_asg" property="allowAllActAsg" jdbcType="BIT" />
+    <result column="allow_all_comment" property="allowAllComment" jdbcType="BIT" />
+    <result column="follow_me" property="followMe" jdbcType="BIT" />
+    <result column="avatar_large" property="avatarLarge" jdbcType="VARCHAR" />
+    <result column="online_status" property="onlineStatus" jdbcType="INTEGER" />
+    <result column="bi_followers_count" property="biFollowersCount" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+    <result column="verified_reason" property="verifiedReason" jdbcType="VARCHAR" />
+    <result column="weihao" property="weihao" jdbcType="VARCHAR" />
+    <result column="status_id" property="statusId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_id, id, screen_name, name, province, city, location, description, url, profileImage_url, 
+    user_domain, gender, followers_count, friends_count, statuses_count, favourites_count, 
+    created_at, following, verified, verified_type, allow_all_act_asg, allow_all_comment, 
+    follow_me, avatar_large, online_status, bi_followers_count, remark, lang, verified_reason, 
+    weihao, status_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_weibo
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer_weibo
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CustomerWeibo" >
+    insert into customer_weibo (customer_id, id, screen_name, 
+      name, province, city, 
+      location, description, url, 
+      profileImage_url, user_domain, gender, 
+      followers_count, friends_count, statuses_count, 
+      favourites_count, created_at, following, 
+      verified, verified_type, allow_all_act_asg, 
+      allow_all_comment, follow_me, avatar_large, 
+      online_status, bi_followers_count, remark, 
+      lang, verified_reason, weihao, 
+      status_id)
+    values (#{customerId,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR}, #{screenName,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{province,jdbcType=INTEGER}, #{city,jdbcType=INTEGER}, 
+      #{location,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{profileimageUrl,jdbcType=VARCHAR}, #{userDomain,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{followersCount,jdbcType=INTEGER}, #{friendsCount,jdbcType=INTEGER}, #{statusesCount,jdbcType=INTEGER}, 
+      #{favouritesCount,jdbcType=INTEGER}, #{createdAt,jdbcType=TIMESTAMP}, #{following,jdbcType=BIT}, 
+      #{verified,jdbcType=BIT}, #{verifiedType,jdbcType=INTEGER}, #{allowAllActAsg,jdbcType=BIT}, 
+      #{allowAllComment,jdbcType=BIT}, #{followMe,jdbcType=BIT}, #{avatarLarge,jdbcType=VARCHAR}, 
+      #{onlineStatus,jdbcType=INTEGER}, #{biFollowersCount,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{lang,jdbcType=VARCHAR}, #{verifiedReason,jdbcType=VARCHAR}, #{weihao,jdbcType=VARCHAR}, 
+      #{statusId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CustomerWeibo" >
+    insert into customer_weibo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="screenName != null" >
+        screen_name,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="location != null" >
+        location,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="profileimageUrl != null" >
+        profileImage_url,
+      </if>
+      <if test="userDomain != null" >
+        user_domain,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="followersCount != null" >
+        followers_count,
+      </if>
+      <if test="friendsCount != null" >
+        friends_count,
+      </if>
+      <if test="statusesCount != null" >
+        statuses_count,
+      </if>
+      <if test="favouritesCount != null" >
+        favourites_count,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+      <if test="following != null" >
+        following,
+      </if>
+      <if test="verified != null" >
+        verified,
+      </if>
+      <if test="verifiedType != null" >
+        verified_type,
+      </if>
+      <if test="allowAllActAsg != null" >
+        allow_all_act_asg,
+      </if>
+      <if test="allowAllComment != null" >
+        allow_all_comment,
+      </if>
+      <if test="followMe != null" >
+        follow_me,
+      </if>
+      <if test="avatarLarge != null" >
+        avatar_large,
+      </if>
+      <if test="onlineStatus != null" >
+        online_status,
+      </if>
+      <if test="biFollowersCount != null" >
+        bi_followers_count,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="lang != null" >
+        lang,
+      </if>
+      <if test="verifiedReason != null" >
+        verified_reason,
+      </if>
+      <if test="weihao != null" >
+        weihao,
+      </if>
+      <if test="statusId != null" >
+        status_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="screenName != null" >
+        #{screenName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="profileimageUrl != null" >
+        #{profileimageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userDomain != null" >
+        #{userDomain,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="followersCount != null" >
+        #{followersCount,jdbcType=INTEGER},
+      </if>
+      <if test="friendsCount != null" >
+        #{friendsCount,jdbcType=INTEGER},
+      </if>
+      <if test="statusesCount != null" >
+        #{statusesCount,jdbcType=INTEGER},
+      </if>
+      <if test="favouritesCount != null" >
+        #{favouritesCount,jdbcType=INTEGER},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="following != null" >
+        #{following,jdbcType=BIT},
+      </if>
+      <if test="verified != null" >
+        #{verified,jdbcType=BIT},
+      </if>
+      <if test="verifiedType != null" >
+        #{verifiedType,jdbcType=INTEGER},
+      </if>
+      <if test="allowAllActAsg != null" >
+        #{allowAllActAsg,jdbcType=BIT},
+      </if>
+      <if test="allowAllComment != null" >
+        #{allowAllComment,jdbcType=BIT},
+      </if>
+      <if test="followMe != null" >
+        #{followMe,jdbcType=BIT},
+      </if>
+      <if test="avatarLarge != null" >
+        #{avatarLarge,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null" >
+        #{onlineStatus,jdbcType=INTEGER},
+      </if>
+      <if test="biFollowersCount != null" >
+        #{biFollowersCount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        #{lang,jdbcType=VARCHAR},
+      </if>
+      <if test="verifiedReason != null" >
+        #{verifiedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="weihao != null" >
+        #{weihao,jdbcType=VARCHAR},
+      </if>
+      <if test="statusId != null" >
+        #{statusId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CustomerWeibo" >
+    update customer_weibo
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="screenName != null" >
+        screen_name = #{screenName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=INTEGER},
+      </if>
+      <if test="location != null" >
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="profileimageUrl != null" >
+        profileImage_url = #{profileimageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userDomain != null" >
+        user_domain = #{userDomain,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="followersCount != null" >
+        followers_count = #{followersCount,jdbcType=INTEGER},
+      </if>
+      <if test="friendsCount != null" >
+        friends_count = #{friendsCount,jdbcType=INTEGER},
+      </if>
+      <if test="statusesCount != null" >
+        statuses_count = #{statusesCount,jdbcType=INTEGER},
+      </if>
+      <if test="favouritesCount != null" >
+        favourites_count = #{favouritesCount,jdbcType=INTEGER},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="following != null" >
+        following = #{following,jdbcType=BIT},
+      </if>
+      <if test="verified != null" >
+        verified = #{verified,jdbcType=BIT},
+      </if>
+      <if test="verifiedType != null" >
+        verified_type = #{verifiedType,jdbcType=INTEGER},
+      </if>
+      <if test="allowAllActAsg != null" >
+        allow_all_act_asg = #{allowAllActAsg,jdbcType=BIT},
+      </if>
+      <if test="allowAllComment != null" >
+        allow_all_comment = #{allowAllComment,jdbcType=BIT},
+      </if>
+      <if test="followMe != null" >
+        follow_me = #{followMe,jdbcType=BIT},
+      </if>
+      <if test="avatarLarge != null" >
+        avatar_large = #{avatarLarge,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null" >
+        online_status = #{onlineStatus,jdbcType=INTEGER},
+      </if>
+      <if test="biFollowersCount != null" >
+        bi_followers_count = #{biFollowersCount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        lang = #{lang,jdbcType=VARCHAR},
+      </if>
+      <if test="verifiedReason != null" >
+        verified_reason = #{verifiedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="weihao != null" >
+        weihao = #{weihao,jdbcType=VARCHAR},
+      </if>
+      <if test="statusId != null" >
+        status_id = #{statusId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerWeibo" >
+    update customer_weibo
+    set id = #{id,jdbcType=VARCHAR},
+      screen_name = #{screenName,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      province = #{province,jdbcType=INTEGER},
+      city = #{city,jdbcType=INTEGER},
+      location = #{location,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      profileImage_url = #{profileimageUrl,jdbcType=VARCHAR},
+      user_domain = #{userDomain,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      followers_count = #{followersCount,jdbcType=INTEGER},
+      friends_count = #{friendsCount,jdbcType=INTEGER},
+      statuses_count = #{statusesCount,jdbcType=INTEGER},
+      favourites_count = #{favouritesCount,jdbcType=INTEGER},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      following = #{following,jdbcType=BIT},
+      verified = #{verified,jdbcType=BIT},
+      verified_type = #{verifiedType,jdbcType=INTEGER},
+      allow_all_act_asg = #{allowAllActAsg,jdbcType=BIT},
+      allow_all_comment = #{allowAllComment,jdbcType=BIT},
+      follow_me = #{followMe,jdbcType=BIT},
+      avatar_large = #{avatarLarge,jdbcType=VARCHAR},
+      online_status = #{onlineStatus,jdbcType=INTEGER},
+      bi_followers_count = #{biFollowersCount,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      lang = #{lang,jdbcType=VARCHAR},
+      verified_reason = #{verifiedReason,jdbcType=VARCHAR},
+      weihao = #{weihao,jdbcType=VARCHAR},
+      status_id = #{statusId,jdbcType=VARCHAR}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="mergeCustomer" >
+    update customer_weibo
+    set customer_id = #{toCustomerId,jdbcType=INTEGER}
+    where customer_id = #{fromCustomerId,jdbcType=INTEGER}
+  </update>
+</mapper>

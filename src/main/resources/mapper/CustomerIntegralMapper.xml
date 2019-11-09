@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CustomerIntegralMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CustomerIntegral" >
+    <id column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="integral" property="integral" jdbcType="INTEGER" />
+    <result column="first_integral_time" property="firstIntegralTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="total_integral" property="totalIntegral" jdbcType="INTEGER" />
+    <result column="total_use_integral" property="totalUseIntegral" jdbcType="INTEGER" />
+    <result column="version" property="version" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_id, integral, first_integral_time, update_time, total_integral, total_use_integral, 
+    version
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_integral
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer_integral
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CustomerIntegral" >
+    insert into customer_integral (customer_id, integral, first_integral_time, 
+      update_time, total_integral, total_use_integral, 
+      version)
+    values (#{customerId,jdbcType=INTEGER}, #{integral,jdbcType=INTEGER}, #{firstIntegralTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{totalIntegral,jdbcType=INTEGER}, #{totalUseIntegral,jdbcType=INTEGER}, 
+      #{version,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CustomerIntegral" >
+    insert into customer_integral
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="integral != null" >
+        integral,
+      </if>
+      <if test="firstIntegralTime != null" >
+        first_integral_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="totalIntegral != null" >
+        total_integral,
+      </if>
+      <if test="totalUseIntegral != null" >
+        total_use_integral,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null" >
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="firstIntegralTime != null" >
+        #{firstIntegralTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalIntegral != null" >
+        #{totalIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="totalUseIntegral != null" >
+        #{totalUseIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CustomerIntegral" >
+    update customer_integral
+    <set >
+      <if test="integral != null" >
+        integral = #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="firstIntegralTime != null" >
+        first_integral_time = #{firstIntegralTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalIntegral != null" >
+        total_integral = #{totalIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="totalUseIntegral != null" >
+        total_use_integral = #{totalUseIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=INTEGER},
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerIntegral" >
+    update customer_integral
+    set integral = #{integral,jdbcType=INTEGER},
+      first_integral_time = #{firstIntegralTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      total_integral = #{totalIntegral,jdbcType=INTEGER},
+      total_use_integral = #{totalUseIntegral,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+</mapper>

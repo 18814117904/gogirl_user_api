@@ -1,0 +1,356 @@
+0    INFO  [2019-07-30 09:42:00]  Starting GogirlUserApplication on DESKTOP-3NQBCGR with PID 14896 (E:\Workspaces\gogirl_user\target\classes started by bailun in E:\Workspaces\gogirl_user)
+4    INFO  [2019-07-30 09:42:00]  The following profiles are active: dev
+194  INFO  [2019-07-30 09:42:00]  Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@530712d: startup date [Tue Jul 30 09:42:00 CST 2019]; root of context hierarchy
+9479 INFO  [2019-07-30 09:42:09]  Tomcat initialized with port(s): 8089 (http)
+10554 INFO  [2019-07-30 09:42:10]  Root WebApplicationContext: initialization completed in 10360 ms
+11912 INFO  [2019-07-30 09:42:12]  Servlet dispatcherServlet mapped to [/]
+11953 INFO  [2019-07-30 09:42:12]  Mapping filter: 'characterEncodingFilter' to: [/*]
+11954 INFO  [2019-07-30 09:42:12]  Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+11954 INFO  [2019-07-30 09:42:12]  Mapping filter: 'httpPutFormContentFilter' to: [/*]
+11955 INFO  [2019-07-30 09:42:12]  Mapping filter: 'requestContextFilter' to: [/*]
+17791 WARN  [2019-07-30 09:42:18]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlProperties': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+17857 INFO  [2019-07-30 09:42:18]  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+17863 ERROR [2019-07-30 09:42:18]  Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlProperties': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.gogirl.gogirl_user.GogirlUserApplication.main(GogirlUserApplication.java:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:513)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:484)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:618)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:177)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 17 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:513)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:484)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:618)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:177)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 30 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1430)
+	... 43 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582)
+	... 55 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$aafc1ca.CGLIB$sqlSessionFactory$0(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$aafc1ca$$FastClassBySpringCGLIB$$836bf664.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$aafc1ca.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 56 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 69 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 71 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 75 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 77 more
+0    INFO  [2019-07-30 09:43:59]  Starting GogirlUserApplication on DESKTOP-3NQBCGR with PID 14532 (E:\Workspaces\gogirl_user\target\classes started by bailun in E:\Workspaces\gogirl_user)
+1    INFO  [2019-07-30 09:43:59]  The following profiles are active: dev
+91   INFO  [2019-07-30 09:43:59]  Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@f79e: startup date [Tue Jul 30 09:43:59 CST 2019]; root of context hierarchy
+3090 INFO  [2019-07-30 09:44:02]  Tomcat initialized with port(s): 8089 (http)
+3410 INFO  [2019-07-30 09:44:02]  Root WebApplicationContext: initialization completed in 3319 ms
+3644 INFO  [2019-07-30 09:44:02]  Servlet dispatcherServlet mapped to [/]
+3649 INFO  [2019-07-30 09:44:02]  Mapping filter: 'characterEncodingFilter' to: [/*]
+3650 INFO  [2019-07-30 09:44:02]  Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+3650 INFO  [2019-07-30 09:44:02]  Mapping filter: 'httpPutFormContentFilter' to: [/*]
+3652 INFO  [2019-07-30 09:44:02]  Mapping filter: 'requestContextFilter' to: [/*]
+4690 WARN  [2019-07-30 09:44:04]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlProperties': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+4758 INFO  [2019-07-30 09:44:04]  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+4761 ERROR [2019-07-30 09:44:04]  Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlProperties': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.gogirl.gogirl_user.GogirlUserApplication.main(GogirlUserApplication.java:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gogirlConfigService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:513)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:484)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:618)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:177)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 17 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gogirlConfigMapper' defined in file [E:\Workspaces\gogirl_user\target\classes\com\gogirl\gogirl_user\dao\GogirlConfigMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:513)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:484)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:618)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:177)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 30 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1430)
+	... 43 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582)
+	... 55 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Workspaces\gogirl_user\target\classes\mapper\GogirlConfigMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$51216efd.CGLIB$sqlSessionFactory$0(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$51216efd$$FastClassBySpringCGLIB$$c8b9ba76.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$51216efd.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 56 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 69 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 71 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gogirl.gogirl_user.bean.GogirlConfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 75 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.gogirl.gogirl_user.bean.GogirlConfig
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 77 more
+0    INFO  [2019-07-30 09:45:10]  Starting GogirlUserApplication on DESKTOP-3NQBCGR with PID 21044 (E:\Workspaces\gogirl_user\target\classes started by bailun in E:\Workspaces\gogirl_user)
+1    INFO  [2019-07-30 09:45:10]  The following profiles are active: dev
+115  INFO  [2019-07-30 09:45:10]  Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34f7234e: startup date [Tue Jul 30 09:45:10 CST 2019]; root of context hierarchy
+3728 INFO  [2019-07-30 09:45:14]  Tomcat initialized with port(s): 8089 (http)
+4050 INFO  [2019-07-30 09:45:14]  Root WebApplicationContext: initialization completed in 3935 ms
+4410 INFO  [2019-07-30 09:45:15]  Servlet dispatcherServlet mapped to [/]
+4414 INFO  [2019-07-30 09:45:15]  Mapping filter: 'characterEncodingFilter' to: [/*]
+4415 INFO  [2019-07-30 09:45:15]  Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+4415 INFO  [2019-07-30 09:45:15]  Mapping filter: 'httpPutFormContentFilter' to: [/*]
+4416 INFO  [2019-07-30 09:45:15]  Mapping filter: 'requestContextFilter' to: [/*]
+7215 INFO  [2019-07-30 09:45:18]  Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+7712 INFO  [2019-07-30 09:45:18]  Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34f7234e: startup date [Tue Jul 30 09:45:10 CST 2019]; root of context hierarchy
+7856 INFO  [2019-07-30 09:45:18]  Mapped "{[/setPrizeState]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.setPrizeState(java.lang.Integer,java.lang.Integer)
+7858 INFO  [2019-07-30 09:45:18]  Mapped "{[/openFoka]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.openFoka(java.lang.Integer)
+7859 INFO  [2019-07-30 09:45:18]  Mapped "{[/dailySign]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.dailySign(int)
+7859 INFO  [2019-07-30 09:45:18]  Mapped "{[/myPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.myPrizeList(java.lang.Integer)
+7860 INFO  [2019-07-30 09:45:18]  Mapped "{[/setJiaTe]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.setJiaTe(java.lang.Integer)
+7861 INFO  [2019-07-30 09:45:18]  Mapped "{[/girlFriendsHelp]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.girlFriendsHelp(int,int)
+7861 INFO  [2019-07-30 09:45:18]  Mapped "{[/getMyFokas]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getMyFokas(int)
+7862 INFO  [2019-07-30 09:45:18]  Mapped "{[/getNewPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getNewPrizeList()
+7862 INFO  [2019-07-30 09:45:18]  Mapped "{[/mergeFokas]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.mergeFokas()
+7862 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectAllPrize]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.selectAllPrize()
+7863 INFO  [2019-07-30 09:45:18]  Mapped "{[/openBigFoka]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.openBigFoka(java.lang.Integer)
+7863 INFO  [2019-07-30 09:45:18]  Mapped "{[/getPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getPrizeList(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+7863 INFO  [2019-07-30 09:45:18]  Mapped "{[/getActivityChanceCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getActivityChanceCustomer(int)
+7864 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByActivityPrize]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.selectByActivityPrize(java.lang.Integer,java.lang.Integer)
+7864 INFO  [2019-07-30 09:45:18]  Mapped "{[/getJoinActiveCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getJoinActiveCustomer(java.lang.Integer,java.lang.Integer,java.lang.String)
+7868 INFO  [2019-07-30 09:45:18]  Mapped "{[/consumeBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeBalance(javax.servlet.http.HttpServletRequest,int,int,java.lang.String,java.lang.Integer,java.lang.Integer)
+7869 INFO  [2019-07-30 09:45:18]  Mapped "{[/consumeWechat]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeWechat(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer)
+7869 INFO  [2019-07-30 09:45:18]  Mapped "{[/withdrawBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.withdrawBalance(java.lang.String,java.lang.Integer)
+7870 INFO  [2019-07-30 09:45:18]  Mapped "{[/chargeBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.chargeBalance(javax.servlet.http.HttpServletRequest,int,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+7870 INFO  [2019-07-30 09:45:18]  Mapped "{[/newCustomerCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.newCustomerCard(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+7871 INFO  [2019-07-30 09:45:18]  Mapped "{[/getBalanceRecord]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalanceRecord(com.gogirl.gogirl_user.entity.CustomerBalanceRecord,int,int)
+7871 INFO  [2019-07-30 09:45:18]  Mapped "{[/getBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalance(javax.servlet.http.HttpServletRequest,int)
+7872 INFO  [2019-07-30 09:45:18]  Mapped "{[/consumeBalanceOpenid]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeBalanceOpenid(javax.servlet.http.HttpServletRequest,java.lang.String,int,java.lang.String,java.lang.Integer,java.lang.Integer)
+7872 INFO  [2019-07-30 09:45:18]  Mapped "{[/chargeBalanceWechat]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.chargeBalanceWechat(javax.servlet.http.HttpServletRequest,java.lang.String,int,java.lang.String)
+7873 INFO  [2019-07-30 09:45:18]  Mapped "{[/getBalanceRecordCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalanceRecordCard(com.gogirl.gogirl_user.entity.CustomerBalanceRecord,int,int)
+7874 INFO  [2019-07-30 09:45:18]  Mapped "{[/countCategorySalesRatio]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCategorySalesRatio(java.lang.Integer,java.util.Date,java.util.Date)
+7875 INFO  [2019-07-30 09:45:18]  Mapped "{[/countCustomerUnitPrice]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCustomerUnitPrice(java.lang.Integer,java.util.Date,java.util.Date)
+7875 INFO  [2019-07-30 09:45:18]  Mapped "{[/countCustomerInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCustomerInfo(java.lang.Integer,java.util.Date,java.util.Date)
+7876 INFO  [2019-07-30 09:45:18]  Mapped "{[/countRepeatPurchaseRate]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countRepeatPurchaseRate(java.lang.Integer,java.util.Date,java.util.Date)
+7876 INFO  [2019-07-30 09:45:18]  Mapped "{[/countUnRecordCustomerInfoNum]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countUnRecordCustomerInfoNum(java.lang.Integer)
+7878 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectByCoupon(com.gogirl.gogirl_user.entity.Coupon,java.lang.Integer,java.lang.Integer)
+7878 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectMyCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectMyCoupon(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+7879 INFO  [2019-07-30 09:45:18]  Mapped "{[/getAllCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.getAllCoupon()
+7879 INFO  [2019-07-30 09:45:18]  Mapped "{[/sendCoupons]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.sendCoupons(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+7880 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.insertCoupon(com.gogirl.gogirl_user.entity.Coupon)
+7880 INFO  [2019-07-30 09:45:18]  Mapped "{[/updateCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.updateByPrimaryKeySelective(com.gogirl.gogirl_user.entity.Coupon)
+7881 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertCouponCustomerRelevance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.insertCouponCustomerRelevance(java.lang.Integer,java.lang.Integer)
+7881 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectRelevanceByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectRelevanceByPrimaryKey(java.lang.Integer)
+7882 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCouponCustomerRelevance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectByCouponCustomerRelevance(com.gogirl.gogirl_user.entity.CouponCustomerRelevance,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+7882 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectCouponByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectCouponByPrimaryKey(java.lang.Integer)
+7885 INFO  [2019-07-30 09:45:18]  Mapped "{[/enablingStoppingCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.enablingStoppingCoupon(java.lang.Integer)
+7886 INFO  [2019-07-30 09:45:18]  Mapped "{[/sendTicketAfterOrder]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.sendTicketAfterOrder(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.Integer,java.lang.Double)
+7886 INFO  [2019-07-30 09:45:18]  Mapped "{[/registerSendCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.registerSendCoupon(java.lang.Integer,java.lang.Integer)
+7889 INFO  [2019-07-30 09:45:18]  Mapped "{[/updateCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateCustomer(com.gogirl.gogirl_user.entity.Customer)
+7890 INFO  [2019-07-30 09:45:18]  Mapped "{[/updateRemark]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateRemark(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+7890 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomer(com.gogirl.gogirl_user.entity.Customer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7891 INFO  [2019-07-30 09:45:18]  Mapped "{[/addOrderTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.addOrderTimes(java.lang.Integer,java.lang.String,java.lang.String)
+7891 INFO  [2019-07-30 09:45:18]  Mapped "{[/minusOrderTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.minusOrderTimes(java.lang.Integer,java.lang.String)
+7891 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertCustomer(com.gogirl.gogirl_user.entity.Customer)
+7892 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCustomerWithStoreAndCardAndDetail]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStoreAndCardAndDetail(java.lang.String,java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7893 INFO  [2019-07-30 09:45:18]  Mapped "{[/mergeRemoveCustomer/{id}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.mergeRemoveCustomer(java.lang.String)
+7893 INFO  [2019-07-30 09:45:18]  Mapped "{[/mergeDeleteCustomerByPhone/{phone}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.mergeDeleteCustomerByPhone(java.lang.String)
+7893 INFO  [2019-07-30 09:45:18]  Mapped "{[/minusScheduledTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.minusScheduledTimes(java.lang.Integer,java.lang.String)
+7894 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertOrUpdateCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertOrUpdateCustomer(com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,java.lang.String)
+7895 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCustomerCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerCard(java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7895 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerByPhone/{phone}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPhone(java.lang.String)
+7895 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerByPrimaryKey/{id}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPrimaryKey(java.lang.String)
+7896 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerDetailById]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerDetailById(java.lang.Integer)
+7896 INFO  [2019-07-30 09:45:18]  Mapped "{[/updateCustomerSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateCustomerSelective(com.gogirl.gogirl_user.entity.Customer)
+7896 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCustomerWithStoreAndCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStoreAndCard(java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7897 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerWithPhone]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerWithPhone(com.gogirl.gogirl_user.entity.Customer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7897 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertOrUpdateCustomerDetail]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertOrUpdateCustomerDetail(com.gogirl.gogirl_user.entity.CustomerDetail)
+7897 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerByPrimaryKey2]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPrimaryKey2(java.lang.String)
+7898 INFO  [2019-07-30 09:45:18]  Mapped "{[/getCustomerByOpenid/{openid}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByOpenid(java.lang.String)
+7899 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCustomerWithStore]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStore(java.lang.Integer,java.lang.Integer,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+7901 INFO  [2019-07-30 09:45:18]  Mapped "{[/photo/delete]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.delete(com.gogirl.gogirl_user.entity.CustomerNailPhoto)
+7901 INFO  [2019-07-30 09:45:18]  Mapped "{[/photo/selectByCustomerNailPhoto]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.selectByCustomerNailPhoto(com.gogirl.gogirl_user.entity.CustomerNailPhoto,java.lang.Integer,java.lang.Integer)
+7902 INFO  [2019-07-30 09:45:18]  Mapped "{[/photo/insertOrUpdateSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.insertOrUpdateSelective(com.gogirl.gogirl_user.entity.CustomerNailPhoto)
+7904 INFO  [2019-07-30 09:45:18]  Mapped "{[/count]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.count(java.lang.Integer,java.lang.Integer,java.lang.Double)
+7904 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByCharge]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByCharge(int)
+7905 INFO  [2019-07-30 09:45:18]  Mapped "{[/couponUse]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.couponUse(java.lang.Integer)
+7905 INFO  [2019-07-30 09:45:18]  Mapped "{[/countPay]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.countPay(java.lang.Integer,java.lang.Integer,java.lang.Double)
+7906 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectDiscount]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectDiscount(java.lang.Integer,java.lang.Integer)
+7906 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.insertSelective(com.gogirl.gogirl_user.entity.DiscountConfig)
+7906 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByPrimaryKey(java.lang.Integer)
+7914 INFO  [2019-07-30 09:45:18]  Mapped "{[/updateByPrimaryKeySelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.updateByPrimaryKeySelective(com.gogirl.gogirl_user.entity.DiscountConfig)
+7915 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectByTotalCharge]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByTotalCharge(int)
+7915 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectAllDiscount]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectAllDiscount()
+7916 INFO  [2019-07-30 09:45:18]  Mapped "{[/deleteByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.deleteByPrimaryKey(java.lang.Integer)
+7919 INFO  [2019-07-30 09:45:18]  Mapped "{[/minusIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.minusIntegral(javax.servlet.http.HttpServletRequest,int,int,java.lang.String)
+7921 INFO  [2019-07-30 09:45:18]  Mapped "{[/getIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.getIntegral(javax.servlet.http.HttpServletRequest,int)
+7921 INFO  [2019-07-30 09:45:18]  Mapped "{[/plusIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.plusIntegral(javax.servlet.http.HttpServletRequest,int,int,java.lang.String)
+7922 INFO  [2019-07-30 09:45:18]  Mapped "{[/selectReceiveInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ReceiveInfoController.selectByPrimaryKey(java.lang.Integer)
+7922 INFO  [2019-07-30 09:45:18]  Mapped "{[/insertOrUpdateReceiveInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ReceiveInfoController.insertOrUpdateSelective(com.gogirl.gogirl_user.entity.CustomerReceiveInfo)
+7923 INFO  [2019-07-30 09:45:18]  Mapped "{[/weiboInfo]}" onto public java.lang.String com.gogirl.gogirl_user.controller.WeiboController.weiboInfo(java.lang.String,java.lang.String)
+7924 INFO  [2019-07-30 09:45:18]  Mapped "{[/weiboLogin]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.WeiboController.weiboLogin(java.lang.String,java.lang.String)
+7928 INFO  [2019-07-30 09:45:18]  Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+7929 INFO  [2019-07-30 09:45:18]  Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+8019 INFO  [2019-07-30 09:45:18]  Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+8019 INFO  [2019-07-30 09:45:18]  Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+8778 INFO  [2019-07-30 09:45:19]  Registering beans for JMX exposure on startup
+8781 INFO  [2019-07-30 09:45:19]  Bean with name 'dataSource' has been autodetected for JMX exposure
+8788 INFO  [2019-07-30 09:45:19]  Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+8806 INFO  [2019-07-30 09:45:19]  No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+8893 INFO  [2019-07-30 09:45:19]  Tomcat started on port(s): 8089 (http) with context path '/gogirl_user'
+8906 INFO  [2019-07-30 09:45:19]  Started GogirlUserApplication in 10.406 seconds (JVM running for 11.488)

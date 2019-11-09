@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gogirl.gogirl_user.dao.StoreUserMapper">
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.StoreUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="department_id" jdbcType="INTEGER" property="departmentId" />
+    <result column="jobs" jdbcType="VARCHAR" property="jobs" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="user_authority" jdbcType="VARCHAR" property="userAuthority" />
+    <result column="picture_path" jdbcType="LONGVARCHAR" property="picturePath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, no, name,picture_path, department_id, jobs, create_time, mobile, user_authority
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from store_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getAllStoreUser"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from store_user
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from store_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.StoreUser">
+    insert into store_user (id, no, name, 
+      department_id, jobs, create_time, 
+      mobile, user_authority, picture_path
+      )
+    values (#{id,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{departmentId,jdbcType=INTEGER}, #{jobs,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{mobile,jdbcType=VARCHAR}, #{userAuthority,jdbcType=VARCHAR}, #{picturePath,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.StoreUser">
+    insert into store_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="no != null">
+        no,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="departmentId != null">
+        department_id,
+      </if>
+      <if test="jobs != null">
+        jobs,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="userAuthority != null">
+        user_authority,
+      </if>
+      <if test="picturePath != null">
+        picture_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="no != null">
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="jobs != null">
+        #{jobs,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userAuthority != null">
+        #{userAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="picturePath != null">
+        #{picturePath,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.StoreUser">
+    update store_user
+    <set>
+      <if test="no != null">
+        no = #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null">
+        department_id = #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="jobs != null">
+        jobs = #{jobs,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userAuthority != null">
+        user_authority = #{userAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="picturePath != null">
+        picture_path = #{picturePath,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.gogirl.gogirl_user.entity.StoreUser">
+    update store_user
+    set no = #{no,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=INTEGER},
+      jobs = #{jobs,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      user_authority = #{userAuthority,jdbcType=VARCHAR},
+      picture_path = #{picturePath,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.StoreUser">
+    update store_user
+    set no = #{no,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=INTEGER},
+      jobs = #{jobs,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      user_authority = #{userAuthority,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

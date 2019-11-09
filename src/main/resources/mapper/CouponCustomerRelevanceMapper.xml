@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CouponCustomerRelevanceMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="coupon_id" property="couponId" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="receive_time" property="receiveTime" jdbcType="TIMESTAMP" />
+    <result column="valid_start_time" property="validStartTime" jdbcType="TIMESTAMP" />
+    <result column="valid_end_time" property="validEndTime" jdbcType="TIMESTAMP" />
+    <result column="use_date" property="useDate" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+<association property="coupon" javaType="com.gogirl.gogirl_user.entity.Coupon">
+    <id column="cpid" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="discount_amount" property="discountAmount" jdbcType="DOUBLE" />
+    <result column="reaching_amount" jdbcType="DOUBLE" property="reachingAmount" />
+    <result column="discount_percent" property="discountPercent" jdbcType="DOUBLE" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="condition1" property="condition1" jdbcType="VARCHAR" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+    <result column="valid_type" property="validType" jdbcType="INTEGER" />
+    <result column="valid_date" property="validDate" jdbcType="INTEGER" />
+    <result column="cpvalid_start_time" property="validStartTime" jdbcType="TIMESTAMP" />
+    <result column="cpvalid_end_time" property="validEndTime" jdbcType="TIMESTAMP" />
+    <result column="all_quantity" property="allQuantity" jdbcType="INTEGER" />
+    <result column="receive_quantity" property="receiveQuantity" jdbcType="INTEGER" />
+    <result column="use_quantity" property="useQuantity" jdbcType="INTEGER" />
+    <result column="limit_quantity" property="limitQuantity" jdbcType="INTEGER" />
+    <result column="cpstate" property="state" jdbcType="INTEGER" />
+    <result column="cpremark" property="remark" jdbcType="VARCHAR" />
+</association>
+<association property="customer" javaType="com.gogirl.gogirl_user.entity.Customer">
+    <id column="cid" property="id" jdbcType="INTEGER" />
+    <result column="openid" property="openid" jdbcType="CHAR" />
+    <result column="phone" property="phone" jdbcType="CHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="headimgurl" property="headimgurl" jdbcType="VARCHAR" />
+    <result column="privilege" property="privilege" jdbcType="VARCHAR" />
+    <result column="cstate" property="state" jdbcType="CHAR" />
+    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+    <result column="cupdate_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="register_department" property="registerDepartment" jdbcType="INTEGER" />
+    <result column="source" property="source" jdbcType="INTEGER" />
+    <result column="scheduled_times" property="scheduledTimes" jdbcType="INTEGER" />
+    <result column="order_times" property="orderTimes" jdbcType="INTEGER" />
+    <result column="store_record_real_name" property="storeRecordRealName" jdbcType="VARCHAR" />
+</association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, customer_id, coupon_id, state, code, receive_time, valid_start_time, valid_end_time, 
+    use_date, remark
+  </sql>
+  <sql id="Base_Column_List_Coupon" >
+    ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , 
+    use_date, ccr.remark as remark,
+    cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, 
+   cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, 
+    cp.state as cpstate, cp.remark as cpremark
+  </sql>
+  <sql id="Base_Column_List_Coupon_Customer" >
+    ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time, ccr.valid_end_time as valid_end_time, 
+    use_date, ccr.remark as remark,
+    cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, 
+    cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, 
+    cp.state as cpstate, cp.remark as cpremark,
+    c.id as cid, openid, phone, nickname, password, sex, country, province, city, headimgurl, 
+    privilege, c.state as cstate, register_time, c.update_time as cupdate_time, real_name, birthday, register_department, source, scheduled_times,order_times,
+    store_record_real_name
+  </sql>
+  <select id="selectByCouponCustomerRelevance" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List_Coupon_Customer" />
+    from coupon_customer_relevance ccr
+    left join coupon cp on ccr.coupon_id = cp.id
+    left join customer c on ccr.customer_id = c.id
+    <where>
+     <if test = "record.id!=null">
+     and  id = #{record.id,jdbcType=INTEGER}
+     </if>
+     <if test = "record.customerId!=null">
+     and  ccr.customer_id = #{record.customerId,jdbcType=INTEGER}
+     </if>
+     <if test = "record.couponId!=null">
+     and  ccr.coupon_id = #{record.couponId,jdbcType=INTEGER}
+     </if>
+     <if test = "record.state!=null">
+     and  ccr.state = #{record.state,jdbcType=INTEGER}
+     </if>
+     <if test = "record.code!=null">
+     and  ccr.code like concat("%",#{record.code,jdbcType=VARCHAR},"%")
+     </if>
+     <if test = "phone!=null">
+     and  c.phone like concat("%",#{phone,jdbcType=VARCHAR},"%") 
+     </if>
+     <if test = "username!=null">
+     and  (
+     c.store_record_real_name like concat("%",#{username,jdbcType=VARCHAR},"%") or
+     c.real_name like concat("%",#{username,jdbcType=VARCHAR},"%") or
+     c.nickname like concat("%",#{username,jdbcType=VARCHAR},"%")
+     )
+     </if>
+    </where>
+    order by receive_time desc
+  </select>
+  <select id="selectMyCoupon" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select 
+    <include refid="Base_Column_List_Coupon" />
+    from coupon_customer_relevance ccr
+    left join coupon cp on ccr.coupon_id = cp.id
+	where customer_id = #{customerId,jdbcType=INTEGER}
+	order by state,discount_amount desc,valid_end_time desc
+  </select><!-- order by discount_amount desc,valid_end_time desc ;    order by receive_time desc;      #and ccr.state=1 and -->
+  <select id="countRelevanceNum" resultType="java.lang.Integer" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance">
+    select count(1) from coupon_customer_relevance
+    where customer_id = #{customerId,jdbcType=INTEGER}
+    and coupon_id = #{couponId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List_Coupon_Customer" />
+    from coupon_customer_relevance ccr
+    left join coupon cp on ccr.coupon_id = cp.id
+    left join customer c on ccr.customer_id = c.id
+    where ccr.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from coupon_customer_relevance
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    insert into coupon_customer_relevance (id, customer_id, coupon_id, 
+      state, code, receive_time, 
+      valid_start_time, valid_end_time, use_date, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, #{couponId,jdbcType=INTEGER}, 
+      #{state,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{receiveTime,jdbcType=TIMESTAMP}, 
+      #{validStartTime,jdbcType=TIMESTAMP}, #{validEndTime,jdbcType=TIMESTAMP}, #{useDate,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelectiveList" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    insert into coupon_customer_relevance (customer_id, coupon_id, 
+      state, code, receive_time, 
+      valid_start_time, valid_end_time, use_date, 
+      remark)
+    values 
+    <foreach collection="list" item="item" index="index" separator=",">
+    (#{item.customerId,jdbcType=INTEGER}, #{item.couponId,jdbcType=INTEGER}, 
+      #{item.state,jdbcType=INTEGER}, #{item.code,jdbcType=VARCHAR}, #{item.receiveTime,jdbcType=TIMESTAMP}, 
+      #{item.validStartTime,jdbcType=TIMESTAMP}, #{item.validEndTime,jdbcType=TIMESTAMP}, #{item.useDate,jdbcType=TIMESTAMP}, 
+      #{item.remark,jdbcType=VARCHAR})
+    </foreach>    
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    insert into coupon_customer_relevance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="couponId != null" >
+        coupon_id,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="receiveTime != null" >
+        receive_time,
+      </if>
+      <if test="validStartTime != null" >
+        valid_start_time,
+      </if>
+      <if test="validEndTime != null" >
+        valid_end_time,
+      </if>
+      <if test="useDate != null" >
+        use_date,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="couponId != null" >
+        #{couponId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTime != null" >
+        #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validStartTime != null" >
+        #{validStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validEndTime != null" >
+        #{validEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useDate != null" >
+        #{useDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+ <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+  SELECT @@IDENTITY AS id
+ </selectKey>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    update coupon_customer_relevance
+    <set >
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="couponId != null" >
+        coupon_id = #{couponId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTime != null" >
+        receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validStartTime != null" >
+        valid_start_time = #{validStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validEndTime != null" >
+        valid_end_time = #{validEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useDate != null" >
+        use_date = #{useDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CouponCustomerRelevance" >
+    update coupon_customer_relevance
+    set customer_id = #{customerId,jdbcType=INTEGER},
+      coupon_id = #{couponId,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR},
+      receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      valid_start_time = #{validStartTime,jdbcType=TIMESTAMP},
+      valid_end_time = #{validEndTime,jdbcType=TIMESTAMP},
+      use_date = #{useDate,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getRandomCode" resultType="java.lang.String" parameterType="java.lang.Double" >
+    select random_code from un_use_code where id>(select floor(#{random,jdbcType=VARCHAR}*(select max(id) from un_use_code))) limit 1
+  </select>
+  <delete id="deleteCode" parameterType="java.lang.String" >
+    delete from un_use_code
+    where random_code = #{code,jdbcType=VARCHAR}
+  </delete>
+  <update id="setCouponExpire" parameterType="java.util.Date">
+    update coupon_customer_relevance
+    set state = 3
+    where state = 1 and #{nowDate,jdbcType=TIMESTAMP} > valid_end_time
+  </update>
+</mapper>

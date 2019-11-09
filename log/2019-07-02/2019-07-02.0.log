@@ -1,0 +1,321 @@
+2019-07-02 03:00:00,121 INFO (CouponService.java:190)- 每天定时任务,判断优惠券是否过期
+2019-07-02 03:00:00,523 INFO (HikariDataSource.java:110)- HikariPool-1 - Starting...
+2019-07-02 03:00:01,260 INFO (HikariDataSource.java:123)- HikariPool-1 - Start completed.
+2019-07-02 03:00:01,270 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon_customer_relevance set state = 3 where state = 1 and ? > valid_end_time 
+2019-07-02 03:00:01,304 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2019-07-02 03:00:00.363(Timestamp)
+2019-07-02 03:00:01,569 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2019-07-02 12:00:00,041 INFO (CouponService.java:177)- 每天定时任务,查看优惠券是否即将过期,发起消息模板提醒
+2019-07-02 12:00:00,421 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time, ccr.valid_end_time as valid_end_time, use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark, c.id as cid, openid, phone, nickname, password, sex, country, province, city, headimgurl, privilege, c.state as cstate, register_time, c.update_time as cupdate_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id left join customer c on ccr.customer_id = c.id order by receive_time desc 
+2019-07-02 12:00:00,425 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 12:00:01,545 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 49
+2019-07-02 13:44:02,618 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-02 13:44:03,341 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 13:44:03,356 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 13:44:03,359 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 13:44:03,659 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 13:44:05,702 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 13:44:05,704 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 13:44:05,733 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 13:44:05,734 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 13:44:06,139 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 13:44:06,150 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 13:44:06,152 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 13:44:06,264 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 13:44:06,446 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 13:44:48,530 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 13:44:48,543 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 13:44:48,544 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 13:44:48,617 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 13:56:09,145 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 13:56:09,151 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 13:56:09,153 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 13:56:09,252 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:05:43,122 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:05:43,126 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:05:43,127 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:05:43,144 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:05:53,077 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:05:53,085 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:05:53,086 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:05:53,094 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:06:17,242 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:06:17,244 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:06:17,245 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:06:17,253 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:09:29,322 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 14:09:29,327 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 14:09:29,329 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 14:09:29,385 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:13:20,846 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 14:13:20,850 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 14:13:20,851 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 14:13:20,861 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:16:02,284 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:16:02,290 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:16:02,291 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:16:02,298 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:40:14,759 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:40:14,769 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:40:14,770 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:40:14,867 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:43:28,464 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v_qxyclUubpM2moUvijk3yk
+2019-07-02 14:43:28,467 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:43:28,468 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v_qxyclUubpM2moUvijk3yk(String)
+2019-07-02 14:43:28,489 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 14:43:28,837 INFO (CustomerCotroller.java:301)- 修改用户信息：Customer [id=1501, openid=o7112v_qxyclUubpM2moUvijk3yk, phone=null, nickname=假设, password=null, sex=男, country=中国, province=湖南, city=衡阳, headimgurl=http://thirdwx.qlogo.cn/mmopen/vi_32/CmCyKiaUqcw37AlNEqtllczhAUmgjR4XabuRFDibz4W1ibnJx64VCvryyamZ6zgDIBibibJibmWFBUIDOnjD12El4dBQ/132, privilege=[], state=null, registerTime=null, updateTime=Wed Jul 03 04:43:28 CST 2019, realName=null, birthday=null, registerDepartment=null, storeRecordRealName=null, remark=null, remark2=null, remark3=null, source=3, scheduledTimes=null, orderTimes=null, storeManage=null, customerBalance=null, customerDetail=null]
+2019-07-02 14:43:28,838 INFO (CustomerService.java:89)- 更新用户信息record:Customer [id=1501, openid=o7112v_qxyclUubpM2moUvijk3yk, phone=null, nickname=假设, password=null, sex=男, country=中国, province=湖南, city=衡阳, headimgurl=http://thirdwx.qlogo.cn/mmopen/vi_32/CmCyKiaUqcw37AlNEqtllczhAUmgjR4XabuRFDibz4W1ibnJx64VCvryyamZ6zgDIBibibJibmWFBUIDOnjD12El4dBQ/132, privilege=[], state=null, registerTime=null, updateTime=Wed Jul 03 04:43:28 CST 2019, realName=null, birthday=null, registerDepartment=null, storeRecordRealName=null, remark=null, remark2=null, remark3=null, source=3, scheduledTimes=null, orderTimes=null, storeManage=null, customerBalance=null, customerDetail=null]
+2019-07-02 14:43:28,855 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update customer SET openid = ?, nickname = ?, sex = ?, country = ?, province = ?, city = ?, headimgurl = ?, privilege = ?, update_time = ?, source = ? where id = ? 
+2019-07-02 14:43:28,857 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v_qxyclUubpM2moUvijk3yk(String), 假设(String), 男(String), 中国(String), 湖南(String), 衡阳(String), http://thirdwx.qlogo.cn/mmopen/vi_32/CmCyKiaUqcw37AlNEqtllczhAUmgjR4XabuRFDibz4W1ibnJx64VCvryyamZ6zgDIBibibJibmWFBUIDOnjD12El4dBQ/132(String), [](String), 2019-07-03 04:43:28.0(Timestamp), 3(Integer), 1501(Integer)
+2019-07-02 14:43:29,007 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-07-02 14:57:11,482 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 14:57:11,492 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 14:57:11,493 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 14:57:11,729 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:07:21,921 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 15:07:21,932 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 15:07:21,933 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 15:07:21,973 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:07:24,961 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:07:25,059 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:07:25,060 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:07:25,174 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:07:52,959 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:07:52,974 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:07:52,994 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:07:52,996 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:07:53,048 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:07:53,062 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:07:53,063 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:07:53,063 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:07:53,111 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:07:56,522 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:07:56,524 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:07:56,524 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:07:56,531 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:08:01,084 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:08:01,088 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:08:01,091 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:08:01,092 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:08:01,095 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:08:01,095 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:08:01,097 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:08:01,098 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:08:01,101 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:08:03,851 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:08:03,853 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:08:03,866 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:08:03,868 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:08:03,872 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:08:04,048 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:08:04,050 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:08:04,051 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:08:04,058 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:36,223 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美甲, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:36,333 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:36,334 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String)
+2019-07-02 15:12:36,528 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:36,529 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ? 
+2019-07-02 15:12:36,530 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String), 20(Integer)
+2019-07-02 15:12:36,577 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:45,678 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美甲, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:45,685 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:45,686 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String)
+2019-07-02 15:12:45,690 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:45,692 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ?, ? 
+2019-07-02 15:12:45,694 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String), 20(Integer), 20(Integer)
+2019-07-02 15:12:45,704 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:47,341 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美甲, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:47,344 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:47,345 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String)
+2019-07-02 15:12:47,348 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:47,350 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ?, ? 
+2019-07-02 15:12:47,350 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String), 40(Integer), 20(Integer)
+2019-07-02 15:12:47,358 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:48,606 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美睫, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:48,612 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:48,613 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美睫(String)
+2019-07-02 15:12:48,617 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:48,619 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ? 
+2019-07-02 15:12:48,620 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美睫(String), 20(Integer)
+2019-07-02 15:12:48,651 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:51,874 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美睫, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:51,881 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:51,881 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美睫(String)
+2019-07-02 15:12:51,962 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:51,964 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ?, ? 
+2019-07-02 15:12:51,965 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美睫(String), 20(Integer), 20(Integer)
+2019-07-02 15:12:51,995 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:52,850 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=护理, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:52,865 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:52,868 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 护理(String)
+2019-07-02 15:12:52,873 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:52,877 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ? 
+2019-07-02 15:12:52,879 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 护理(String), 20(Integer)
+2019-07-02 15:12:52,936 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:12:54,852 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=其它, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:12:54,859 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:12:54,860 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 其它(String)
+2019-07-02 15:12:54,863 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:12:56,547 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:12:56,599 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:12:56,600 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:12:56,615 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:13:02,071 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:13:02,072 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:13:02,075 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:13:02,076 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:13:02,077 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:13:02,080 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:13:02,116 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:13:02,117 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:13:02,120 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:26:55,552 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 15:26:55,555 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 15:26:55,556 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 15:26:55,621 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:27:17,786 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 15:27:17,790 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 15:27:17,790 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 15:27:17,798 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:35:29,219 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:35:29,226 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:35:29,228 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:35:29,354 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:35:39,499 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:35:39,524 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:35:39,525 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:35:39,546 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:35:43,526 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:35:43,533 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:35:43,534 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:35:43,542 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:40:01,460 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:40:01,462 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:40:01,463 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:40:01,471 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:41:13,065 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-02 15:41:13,081 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-02 15:41:13,081 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-02 15:41:13,091 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:42:30,874 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:42:30,876 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:42:30,878 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:42:30,887 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:42:38,671 INFO (CustomerNailPhotoCotroller.java:45)- 查询客照列表:CustomerNailPhoto [id=null, orderId=null, serviceId=null, serveType=美甲, picturePath=null, createTime=null, updateTime=null, source=null, remark=null]
+2019-07-02 15:42:38,679 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM customer_nail_photo WHERE serve_type = ? 
+2019-07-02 15:42:38,680 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String)
+2019-07-02 15:42:38,687 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:42:38,743 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, order_id, service_id, serve_type, picture_path, create_time, update_time, source, remark from customer_nail_photo WHERE serve_type = ? order by create_time desc LIMIT ? 
+2019-07-02 15:42:38,744 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美甲(String), 20(Integer)
+2019-07-02 15:42:38,750 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2019-07-02 15:42:40,537 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:42:40,540 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:42:40,541 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:42:40,543 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:42:40,544 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:42:40,546 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:42:40,547 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:42:40,557 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:42:40,568 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:42:42,581 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:42:42,585 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:42:42,586 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:42:42,597 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:42:49,788 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:42:49,789 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:42:49,792 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:42:49,792 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:42:49,792 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:42:49,793 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:42:49,793 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:42:49,796 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:42:49,796 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:43:02,021 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:43:02,022 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:43:02,025 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:43:02,025 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:43:02,026 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:43:02,027 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:43:02,028 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:43:02,030 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:43:02,031 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:43:05,135 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:43:05,138 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:43:05,143 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:43:05,144 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:43:05,145 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:43:05,146 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:43:05,147 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:43:05,151 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:43:05,189 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:43:36,672 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:43:36,676 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:43:36,678 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:43:36,688 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:48:55,881 INFO (CustomerCotroller.java:343)- 获取用户信息id:1455
+2019-07-02 15:48:55,884 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-02 15:48:55,885 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:48:55,927 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:49:02,173 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:49:02,173 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:49:02,176 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:49:02,177 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:49:02,178 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:49:02,181 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:49:02,225 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:49:02,225 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:49:02,228 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:49:03,252 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:49:03,252 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:49:03,257 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:49:03,304 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:49:03,305 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:49:03,310 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:49:47,635 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:49:47,637 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:49:47,643 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:49:47,676 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:49:47,677 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:49:47,698 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:49:55,170 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:49:55,171 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:49:55,175 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:49:55,177 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:49:55,177 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:49:55,181 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:50:30,163 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:50:30,164 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:50:30,170 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:50:30,171 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:50:30,271 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:50:30,302 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:50:30,304 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:50:30,305 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:50:30,377 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:50:58,515 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:50:58,516 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:50:58,523 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:50:58,524 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:50:58,530 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:50:58,532 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:50:58,533 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:50:58,537 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:50:58,566 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:51:14,202 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:51:14,202 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:51:14,203 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:51:14,203 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:51:14,265 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:51:14,288 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:51:14,289 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:51:14,290 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:51:14,353 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-02 15:51:28,805 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-02 15:51:28,805 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-02 15:51:28,806 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-02 15:51:28,806 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1455(Integer)
+2019-07-02 15:51:28,923 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-02 15:51:28,949 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-02 15:51:28,952 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-02 15:51:28,954 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-02 15:51:28,966 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1

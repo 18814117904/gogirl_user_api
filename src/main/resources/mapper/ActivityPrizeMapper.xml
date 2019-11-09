@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.ActivityPrizeMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="prize_name" property="prizeName" jdbcType="VARCHAR" />
+    <result column="issue_object" property="issueObject" jdbcType="INTEGER" />
+    <result column="issue_rules" property="issueRules" jdbcType="VARCHAR" />
+    <result column="prize_weight" property="prizeWeight" jdbcType="DOUBLE" />
+    <result column="prize_amount" property="prizeAmount" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="is_fokas" property="isFokas" jdbcType="INTEGER" />
+    <result column="picture_path" property="picturePath" jdbcType="VARCHAR" />
+    <result column="prize_remark" property="prizeRemark" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, prize_name, issue_object, issue_rules, prize_weight, prize_amount, type, is_fokas, 
+    picture_path,prize_remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from activity_prize
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByActivityPrize" resultMap="BaseResultMap" parameterType="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    select 
+    <include refid="Base_Column_List" />
+    from activity_prize
+    <where>
+    prize_amount > 0
+      <if test="issueObject != null" >
+        and issue_object = #{issueObject,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+        and type = #{type,jdbcType=INTEGER}
+      </if>
+      <if test="isFokas != null" >
+        and is_fokas = #{isFokas,jdbcType=INTEGER}
+      </if>
+      <if test="issueObject != null" >
+        and issue_object = #{issueObject,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+  <select id="selectAllPrize" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from activity_prize where type!=3
+  </select>
+  <select id="getMyFokas" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    p.*,count(pc.prize_id) as num
+    from activity_prize p 
+    LEFT JOIN activity_prize_customer pc 
+    ON p.id=pc.prize_id and pc.customer_id = #{id,jdbcType=INTEGER} and pc.status!=3
+    GROUP BY p.id
+  </select>
+  <select id="getMyPeiQi" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    p.*,count(pc.prize_id) as num
+    from activity_prize p 
+    LEFT JOIN activity_prize_customer pc 
+    ON 5=pc.prize_id and pc.customer_id = #{id,jdbcType=INTEGER} and status = 1
+    where 5=p.id
+    GROUP BY p.id
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from activity_prize
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    insert into activity_prize (id, prize_name, issue_object, 
+      issue_rules, prize_weight, prize_amount, 
+      type, is_fokas, picture_path,prize_remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{prizeName,jdbcType=VARCHAR}, #{issueObject,jdbcType=INTEGER}, 
+      #{issueRules,jdbcType=VARCHAR}, #{prizeWeight,jdbcType=DOUBLE}, #{prizeAmount,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER}, #{isFokas,jdbcType=INTEGER}, #{picturePath,jdbcType=VARCHAR}, #{prizeRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    insert into activity_prize
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="prizeName != null" >
+        prize_name,
+      </if>
+      <if test="issueObject != null" >
+        issue_object,
+      </if>
+      <if test="issueRules != null" >
+        issue_rules,
+      </if>
+      <if test="prizeWeight != null" >
+        prize_weight,
+      </if>
+      <if test="prizeAmount != null" >
+        prize_amount,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="isFokas != null" >
+        is_fokas,
+      </if>
+      <if test="picturePath != null" >
+        picture_path,
+      </if>
+      <if test="prizeRemark != null" >
+        prize_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="prizeName != null" >
+        #{prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueObject != null" >
+        #{issueObject,jdbcType=INTEGER},
+      </if>
+      <if test="issueRules != null" >
+        #{issueRules,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeWeight != null" >
+        #{prizeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="prizeAmount != null" >
+        #{prizeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="isFokas != null" >
+        #{isFokas,jdbcType=INTEGER},
+      </if>
+      <if test="picturePath != null" >
+        #{picturePath,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeRemark != null" >
+        #{prizeRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    update activity_prize
+    <set >
+      <if test="prizeName != null" >
+        prize_name = #{prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueObject != null" >
+        issue_object = #{issueObject,jdbcType=INTEGER},
+      </if>
+      <if test="issueRules != null" >
+        issue_rules = #{issueRules,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeWeight != null" >
+        prize_weight = #{prizeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="prizeAmount != null" >
+        prize_amount = #{prizeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="isFokas != null" >
+        is_fokas = #{isFokas,jdbcType=INTEGER},
+      </if>
+      <if test="picturePath != null" >
+        picture_path = #{picturePath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.ActivityPrize" >
+    update activity_prize
+    set prize_name = #{prizeName,jdbcType=VARCHAR},
+      issue_object = #{issueObject,jdbcType=INTEGER},
+      issue_rules = #{issueRules,jdbcType=VARCHAR},
+      prize_weight = #{prizeWeight,jdbcType=DOUBLE},
+      prize_amount = #{prizeAmount,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      is_fokas = #{isFokas,jdbcType=INTEGER},
+      picture_path = #{picturePath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

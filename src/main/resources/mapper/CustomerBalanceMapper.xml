@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CustomerBalanceMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CustomerBalance" >
+    <id column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="balance" property="balance" jdbcType="INTEGER" />
+    <result column="current_discount" property="currentDiscount" jdbcType="DOUBLE" />
+    <result column="first_charge_time" property="firstChargeTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="total_charge" property="totalCharge" jdbcType="INTEGER" />
+    <result column="total_bestow" property="totalBestow" jdbcType="INTEGER" />
+    <result column="total_expenditure" property="totalExpenditure" jdbcType="INTEGER" />
+    <result column="version" property="version" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="VARCHAR" />
+    <result column="referee_id" property="refereeId" jdbcType="VARCHAR" />
+	<result column="discount_rate" property="discountRate" jdbcType="DOUBLE" />
+	 <association property="referee" javaType="com.gogirl.gogirl_user.entity.StoreUser">
+    <id column="rid" property="id" jdbcType="INTEGER" />
+    <result column="no" property="no" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="jobs" property="jobs" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="user_authority" property="userAuthority" jdbcType="VARCHAR" />
+	 </association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_id, balance, current_discount, first_charge_time, update_time, total_charge, 
+    total_bestow, total_expenditure, version, level,discount_rate
+  </sql>
+  <select id="selectByCustomerId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_balance cb
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer_balance
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CustomerBalance" >
+    insert into customer_balance (customer_id, balance, current_discount, 
+      first_charge_time, update_time, total_charge, 
+      total_bestow, total_expenditure, version, 
+      level,referee_id)
+    values (#{customerId,jdbcType=INTEGER}, #{balance,jdbcType=INTEGER}, #{currentDiscount,jdbcType=DOUBLE}, 
+      #{firstChargeTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{totalCharge,jdbcType=INTEGER}, 
+      #{totalBestow,jdbcType=INTEGER}, #{totalExpenditure,jdbcType=INTEGER}, #{version,jdbcType=INTEGER}, 
+      #{level,jdbcType=VARCHAR},#{refereeId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CustomerBalance" >
+    insert into customer_balance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="balance != null" >
+        balance,
+      </if>
+      <if test="currentDiscount != null" >
+        current_discount,
+      </if>
+      <if test="firstChargeTime != null" >
+        first_charge_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="totalCharge != null" >
+        total_charge,
+      </if>
+      <if test="totalBestow != null" >
+        total_bestow,
+      </if>
+      <if test="totalExpenditure != null" >
+        total_expenditure,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="refereeId != null" >
+        referee_id,
+      </if>
+      <if test="discountRate != null" >
+        discount_rate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=INTEGER},
+      </if>
+      <if test="currentDiscount != null" >
+        #{currentDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="firstChargeTime != null" >
+        #{firstChargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalCharge != null" >
+        #{totalCharge,jdbcType=INTEGER},
+      </if>
+      <if test="totalBestow != null" >
+        #{totalBestow,jdbcType=INTEGER},
+      </if>
+      <if test="totalExpenditure != null" >
+        #{totalExpenditure,jdbcType=INTEGER},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeId != null" >
+        #{refereeId,jdbcType=VARCHAR},
+      </if>
+      <if test="discountRate != null" >
+        #{discountRate,jdbcType=DOUBLE}
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CustomerBalance" >
+    update customer_balance
+    <set >
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=INTEGER},
+      </if>
+      <if test="currentDiscount != null" >
+        current_discount = #{currentDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="firstChargeTime != null" >
+        first_charge_time = #{firstChargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalCharge != null" >
+        total_charge = #{totalCharge,jdbcType=INTEGER},
+      </if>
+      <if test="totalBestow != null" >
+        total_bestow = #{totalBestow,jdbcType=INTEGER},
+      </if>
+      <if test="totalExpenditure != null" >
+        total_expenditure = #{totalExpenditure,jdbcType=INTEGER},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeId != null" >
+        referee_id = #{refereeId,jdbcType=VARCHAR},
+      </if>
+      <if test="discountRate != null" >
+        discount_rate = #{discountRate,jdbcType=DOUBLE}
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerBalance" >
+    update customer_balance
+    set balance = #{balance,jdbcType=INTEGER},
+      current_discount = #{currentDiscount,jdbcType=DOUBLE},
+      first_charge_time = #{firstChargeTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      total_charge = #{totalCharge,jdbcType=INTEGER},
+      total_bestow = #{totalBestow,jdbcType=INTEGER},
+      total_expenditure = #{totalExpenditure,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      level = #{level,jdbcType=VARCHAR}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="mergeCustomer" >
+    update customer_balance
+    set customer_id = #{toCustomerId,jdbcType=INTEGER}
+    where customer_id = #{fromCustomerId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CustomerDepartmentRelevanceMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevance" >
+    <id column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <id column="department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="relevance_source" property="relevanceSource" jdbcType="INTEGER" />
+    <result column="relevance_time" property="relevanceTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_id, department_id, relevance_source, relevance_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevanceKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_department_relevance
+    where customer_id = #{customerId,jdbcType=INTEGER}
+      and department_id = #{departmentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevanceKey" >
+    delete from customer_department_relevance
+    where customer_id = #{customerId,jdbcType=INTEGER}
+      and department_id = #{departmentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevance" >
+    insert into customer_department_relevance (customer_id, department_id, relevance_source, 
+      relevance_time)
+    values (#{customerId,jdbcType=INTEGER}, #{departmentId,jdbcType=INTEGER}, #{relevanceSource,jdbcType=INTEGER}, 
+      #{relevanceTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevance" >
+    insert into customer_department_relevance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="departmentId != null" >
+        department_id,
+      </if>
+      <if test="relevanceSource != null" >
+        relevance_source,
+      </if>
+      <if test="relevanceTime != null" >
+        relevance_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="relevanceSource != null" >
+        #{relevanceSource,jdbcType=INTEGER},
+      </if>
+      <if test="relevanceTime != null" >
+        #{relevanceTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevance" >
+    update customer_department_relevance
+    <set >
+      <if test="relevanceSource != null" >
+        relevance_source = #{relevanceSource,jdbcType=INTEGER},
+      </if>
+      <if test="relevanceTime != null" >
+        relevance_time = #{relevanceTime,jdbcType=DATE},
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+      and department_id = #{departmentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerDepartmentRelevance" >
+    update customer_department_relevance
+    set relevance_source = #{relevanceSource,jdbcType=INTEGER},
+      relevance_time = #{relevanceTime,jdbcType=DATE}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+      and department_id = #{departmentId,jdbcType=INTEGER}
+  </update>
+  <update id="mergeCustomer" >
+    update customer_department_relevance
+    set customer_id = #{toCustomerId,jdbcType=INTEGER}
+    where customer_id = #{fromCustomerId,jdbcType=INTEGER} and department_id not in (select cc.department_id from (select department_id from customer_department_relevance where  customer_id = #{toCustomerId,jdbcType=INTEGER}) cc)
+  </update>
+</mapper>

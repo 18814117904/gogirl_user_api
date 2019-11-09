@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CustomerDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.gogirl.gogirl_user.entity.CustomerDetail" >
+    <id column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="wechat_id" property="wechatId" jdbcType="VARCHAR" />
+    <result column="referee" property="referee" jdbcType="VARCHAR" />
+    <result column="first_serve_time" property="firstServeTime" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="marital_status" property="maritalStatus" jdbcType="VARCHAR" />
+    <result column="have_children" property="haveChildren" jdbcType="VARCHAR" />
+    <result column="hobby" property="hobby" jdbcType="VARCHAR" />
+    <result column="colour_of_skin" property="colourOfSkin" jdbcType="VARCHAR" />
+    <result column="type_of_nail_bed" property="typeOfNailBed" jdbcType="VARCHAR" />
+    <result column="nail_type" property="nailType" jdbcType="VARCHAR" />
+    <result column="nail_hardness" property="nailHardness" jdbcType="INTEGER" />
+    <result column="residence" property="residence" jdbcType="INTEGER" />
+    <result column="work_address" property="workAddress" jdbcType="INTEGER" />
+    <result column="occupation" property="occupation" jdbcType="INTEGER" />
+    <result column="frequency_of_nail" property="frequencyOfNail" jdbcType="INTEGER" />
+    <result column="key_points_of_salon" property="keyPointsOfSalon" jdbcType="VARCHAR" />
+    <result column="like_style" property="likeStyle" jdbcType="VARCHAR" />
+    <result column="customer_concerns" property="customerConcerns" jdbcType="VARCHAR" />
+    <result column="solution" property="solution" jdbcType="VARCHAR" />
+    <result column="eyelash_condition" property="eyelashCondition" jdbcType="VARCHAR" />
+    <result column="eye_shape" property="eyeShape" jdbcType="VARCHAR" />
+    <result column="questionnaire_img_url" property="questionnaireImgUrl" jdbcType="VARCHAR" />
+    <result column="learn_about_us" property="learnAboutUs" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_id, wechat_id, referee, first_serve_time, age, birthday, marital_status, 
+    have_children, hobby, colour_of_skin, type_of_nail_bed, nail_type, nail_hardness, 
+    residence, work_address, occupation, frequency_of_nail, key_points_of_salon, like_style, 
+    customer_concerns, solution, eyelash_condition, eye_shape, questionnaire_img_url,learn_about_us
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_detail
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer_detail
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gogirl.gogirl_user.entity.CustomerDetail" >
+    insert into customer_detail (customer_id, wechat_id, referee, 
+      first_serve_time, age, birthday, 
+      marital_status, have_children, hobby, 
+      colour_of_skin, type_of_nail_bed, nail_type, 
+      nail_hardness, residence, work_address, 
+      occupation, frequency_of_nail, key_points_of_salon, 
+      like_style, customer_concerns, solution, 
+      eyelash_condition, eye_shape, questionnaire_img_url,learn_about_us
+      )
+    values (#{customerId,jdbcType=INTEGER}, #{wechatId,jdbcType=VARCHAR}, #{referee,jdbcType=VARCHAR}, 
+      #{firstServeTime,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, 
+      #{maritalStatus,jdbcType=VARCHAR}, #{haveChildren,jdbcType=VARCHAR}, #{hobby,jdbcType=VARCHAR}, 
+      #{colourOfSkin,jdbcType=VARCHAR}, #{typeOfNailBed,jdbcType=VARCHAR}, #{nailType,jdbcType=VARCHAR}, 
+      #{nailHardness,jdbcType=INTEGER}, #{residence,jdbcType=INTEGER}, #{workAddress,jdbcType=INTEGER}, 
+      #{occupation,jdbcType=INTEGER}, #{frequencyOfNail,jdbcType=INTEGER}, #{keyPointsOfSalon,jdbcType=VARCHAR}, 
+      #{likeStyle,jdbcType=VARCHAR}, #{customerConcerns,jdbcType=VARCHAR}, #{solution,jdbcType=VARCHAR}, 
+      #{eyelashCondition,jdbcType=VARCHAR}, #{eyeShape,jdbcType=VARCHAR}, #{questionnaireImgUrl,jdbcType=VARCHAR}, #{learnAboutUs,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gogirl.gogirl_user.entity.CustomerDetail" >
+    insert into customer_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="wechatId != null" >
+        wechat_id,
+      </if>
+      <if test="referee != null" >
+        referee,
+      </if>
+      <if test="firstServeTime != null" >
+        first_serve_time,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status,
+      </if>
+      <if test="haveChildren != null" >
+        have_children,
+      </if>
+      <if test="hobby != null" >
+        hobby,
+      </if>
+      <if test="colourOfSkin != null" >
+        colour_of_skin,
+      </if>
+      <if test="typeOfNailBed != null" >
+        type_of_nail_bed,
+      </if>
+      <if test="nailType != null" >
+        nail_type,
+      </if>
+      <if test="nailHardness != null" >
+        nail_hardness,
+      </if>
+      <if test="residence != null" >
+        residence,
+      </if>
+      <if test="workAddress != null" >
+        work_address,
+      </if>
+      <if test="occupation != null" >
+        occupation,
+      </if>
+      <if test="frequencyOfNail != null" >
+        frequency_of_nail,
+      </if>
+      <if test="keyPointsOfSalon != null" >
+        key_points_of_salon,
+      </if>
+      <if test="likeStyle != null" >
+        like_style,
+      </if>
+      <if test="customerConcerns != null" >
+        customer_concerns,
+      </if>
+      <if test="solution != null" >
+        solution,
+      </if>
+      <if test="eyelashCondition != null" >
+        eyelash_condition,
+      </if>
+      <if test="eyeShape != null" >
+        eye_shape,
+      </if>
+      <if test="questionnaireImgUrl != null" >
+        questionnaire_img_url,
+      </if>
+      <if test="learnAboutUs != null" >
+        learn_about_us,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="wechatId != null" >
+        #{wechatId,jdbcType=VARCHAR},
+      </if>
+      <if test="referee != null" >
+        #{referee,jdbcType=VARCHAR},
+      </if>
+      <if test="firstServeTime != null" >
+        #{firstServeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        #{maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="haveChildren != null" >
+        #{haveChildren,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null" >
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="colourOfSkin != null" >
+        #{colourOfSkin,jdbcType=VARCHAR},
+      </if>
+      <if test="typeOfNailBed != null" >
+        #{typeOfNailBed,jdbcType=VARCHAR},
+      </if>
+      <if test="nailType != null" >
+        #{nailType,jdbcType=VARCHAR},
+      </if>
+      <if test="nailHardness != null" >
+        #{nailHardness,jdbcType=INTEGER},
+      </if>
+      <if test="residence != null" >
+        #{residence,jdbcType=INTEGER},
+      </if>
+      <if test="workAddress != null" >
+        #{workAddress,jdbcType=INTEGER},
+      </if>
+      <if test="occupation != null" >
+        #{occupation,jdbcType=INTEGER},
+      </if>
+      <if test="frequencyOfNail != null" >
+        #{frequencyOfNail,jdbcType=INTEGER},
+      </if>
+      <if test="keyPointsOfSalon != null" >
+        #{keyPointsOfSalon,jdbcType=VARCHAR},
+      </if>
+      <if test="likeStyle != null" >
+        #{likeStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="customerConcerns != null" >
+        #{customerConcerns,jdbcType=VARCHAR},
+      </if>
+      <if test="solution != null" >
+        #{solution,jdbcType=VARCHAR},
+      </if>
+      <if test="eyelashCondition != null" >
+        #{eyelashCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="eyeShape != null" >
+        #{eyeShape,jdbcType=VARCHAR},
+      </if>
+      <if test="questionnaireImgUrl != null" >
+        #{questionnaireImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="learnAboutUs != null" >
+        #{learnAboutUs,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gogirl.gogirl_user.entity.CustomerDetail" >
+    update customer_detail
+    <set >
+      <if test="wechatId != null" >
+        wechat_id = #{wechatId,jdbcType=VARCHAR},
+      </if>
+      <if test="referee != null" >
+        referee = #{referee,jdbcType=VARCHAR},
+      </if>
+      <if test="firstServeTime != null" >
+        first_serve_time = #{firstServeTime,jdbcType=VARCHAR},
+      </if>
+      <!-- <if test="age != null" > -->
+        age = #{age,jdbcType=INTEGER},
+      <!-- </if> -->
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status = #{maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="haveChildren != null" >
+        have_children = #{haveChildren,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null" >
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="colourOfSkin != null" >
+        colour_of_skin = #{colourOfSkin,jdbcType=VARCHAR},
+      </if>
+      <if test="typeOfNailBed != null" >
+        type_of_nail_bed = #{typeOfNailBed,jdbcType=VARCHAR},
+      </if>
+      <if test="nailType != null" >
+        nail_type = #{nailType,jdbcType=VARCHAR},
+      </if>
+      <if test="nailHardness != null" >
+        nail_hardness = #{nailHardness,jdbcType=INTEGER},
+      </if>
+      <if test="residence != null" >
+        residence = #{residence,jdbcType=INTEGER},
+      </if>
+      <if test="workAddress != null" >
+        work_address = #{workAddress,jdbcType=INTEGER},
+      </if>
+      <if test="occupation != null" >
+        occupation = #{occupation,jdbcType=INTEGER},
+      </if>
+      <if test="frequencyOfNail != null" >
+        frequency_of_nail = #{frequencyOfNail,jdbcType=INTEGER},
+      </if>
+      <if test="keyPointsOfSalon != null" >
+        key_points_of_salon = #{keyPointsOfSalon,jdbcType=VARCHAR},
+      </if>
+      <if test="likeStyle != null" >
+        like_style = #{likeStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="customerConcerns != null" >
+        customer_concerns = #{customerConcerns,jdbcType=VARCHAR},
+      </if>
+      <if test="solution != null" >
+        solution = #{solution,jdbcType=VARCHAR},
+      </if>
+      <if test="eyelashCondition != null" >
+        eyelash_condition = #{eyelashCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="eyeShape != null" >
+        eye_shape = #{eyeShape,jdbcType=VARCHAR},
+      </if>
+      <if test="questionnaireImgUrl != null" >
+        questionnaire_img_url = #{questionnaireImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="learnAboutUs != null" >
+        learn_about_us = #{learnAboutUs,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gogirl.gogirl_user.entity.CustomerDetail" >
+    update customer_detail
+    set wechat_id = #{wechatId,jdbcType=VARCHAR},
+      referee = #{referee,jdbcType=VARCHAR},
+      first_serve_time = #{firstServeTime,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      marital_status = #{maritalStatus,jdbcType=VARCHAR},
+      have_children = #{haveChildren,jdbcType=VARCHAR},
+      hobby = #{hobby,jdbcType=VARCHAR},
+      colour_of_skin = #{colourOfSkin,jdbcType=VARCHAR},
+      type_of_nail_bed = #{typeOfNailBed,jdbcType=VARCHAR},
+      nail_type = #{nailType,jdbcType=VARCHAR},
+      nail_hardness = #{nailHardness,jdbcType=INTEGER},
+      residence = #{residence,jdbcType=INTEGER},
+      work_address = #{workAddress,jdbcType=INTEGER},
+      occupation = #{occupation,jdbcType=INTEGER},
+      frequency_of_nail = #{frequencyOfNail,jdbcType=INTEGER},
+      key_points_of_salon = #{keyPointsOfSalon,jdbcType=VARCHAR},
+      like_style = #{likeStyle,jdbcType=VARCHAR},
+      customer_concerns = #{customerConcerns,jdbcType=VARCHAR},
+      solution = #{solution,jdbcType=VARCHAR},
+      eyelash_condition = #{eyelashCondition,jdbcType=VARCHAR},
+      eye_shape = #{eyeShape,jdbcType=VARCHAR},
+      questionnaire_img_url = #{questionnaireImgUrl,jdbcType=VARCHAR}
+      learn_about_us = #{learnAboutUs,jdbcType=VARCHAR}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,650 @@
+2019-07-06 03:00:00,011 INFO (CouponService.java:190)- 每天定时任务,判断优惠券是否过期
+2019-07-06 03:00:05,046 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1e1ad802 (No operations allowed after connection closed.)
+2019-07-06 03:00:10,055 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@25f2b478 (No operations allowed after connection closed.)
+2019-07-06 03:00:15,060 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@46d1787f (No operations allowed after connection closed.)
+2019-07-06 03:00:20,065 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@14ea9a8f (No operations allowed after connection closed.)
+2019-07-06 03:00:25,069 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@248bbd1e (No operations allowed after connection closed.)
+2019-07-06 03:00:30,074 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3106b2f1 (No operations allowed after connection closed.)
+2019-07-06 12:00:00,008 INFO (CouponService.java:177)- 每天定时任务,查看优惠券是否即将过期,发起消息模板提醒
+2019-07-06 12:00:05,016 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5c891c99 (No operations allowed after connection closed.)
+2019-07-06 12:00:10,023 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@babd50 (No operations allowed after connection closed.)
+2019-07-06 12:00:15,029 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1ceea3d6 (No operations allowed after connection closed.)
+2019-07-06 12:00:20,034 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@52b05e8f (No operations allowed after connection closed.)
+2019-07-06 12:00:25,043 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@bd2b30f (No operations allowed after connection closed.)
+2019-07-06 12:00:30,051 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@75c57af1 (No operations allowed after connection closed.)
+2019-07-06 14:26:11,716 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-06 14:26:16,719 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1cc0c49 (No operations allowed after connection closed.)
+2019-07-06 14:26:21,722 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3ab4f04b (No operations allowed after connection closed.)
+2019-07-06 14:26:26,790 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@a4bdc23 (No operations allowed after connection closed.)
+2019-07-06 14:26:31,802 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@264702e7 (No operations allowed after connection closed.)
+2019-07-06 14:26:36,812 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@382d7047 (No operations allowed after connection closed.)
+2019-07-06 14:26:41,826 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@798b755d (No operations allowed after connection closed.)
+2019-07-06 14:26:41,836 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] in context with path [/gogirl_user] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30111ms.
+### The error may exist in file [E:\Workspaces\gogirl_user\target\classes\mapper\CustomerMapper.xml]
+### The error may involve com.gogirl.gogirl_user.dao.CustomerMapper.selectByOpenid
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30111ms.] with root cause
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1184)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1179)
+	at com.mysql.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:5483)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:541)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:162)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:148)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy97.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy65.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy66.selectByOpenid(Unknown Source)
+	at com.gogirl.gogirl_user.service.CustomerService.selectByOpenid(CustomerService.java:193)
+	at com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByOpenid(CustomerCotroller.java:367)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-06 14:30:08,052 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-06 14:30:13,055 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4ac8bd7f (No operations allowed after connection closed.)
+2019-07-06 14:30:18,059 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7eaeda50 (No operations allowed after connection closed.)
+2019-07-06 14:30:23,065 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@8dcc836 (No operations allowed after connection closed.)
+2019-07-06 14:30:28,072 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4958fdd9 (No operations allowed after connection closed.)
+2019-07-06 14:30:28,095 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 14:30:28,102 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-06 14:30:28,179 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:30:48,873 INFO (CustomerCotroller.java:343)- 获取用户信息id:1736
+2019-07-06 14:30:48,885 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-06 14:30:48,887 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:30:48,906 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:33:51,557 INFO (CustomerCotroller.java:343)- 获取用户信息id:1736
+2019-07-06 14:33:51,573 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-07-06 14:33:51,574 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:33:51,589 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:33:58,665 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-06 14:33:58,666 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-06 14:33:58,676 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-06 14:33:58,734 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-06 14:33:58,735 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:33:58,745 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-06 14:33:58,747 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-06 14:33:58,747 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-06 14:33:58,756 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:34:00,343 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:34:00,449 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:34:00,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:34:00,462 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:34:00,465 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:34:00,466 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:34:00,489 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:34:03,379 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select customer_id, balance, current_discount, first_charge_time, update_time, total_charge, total_bestow, total_expenditure, version, level,discount_rate from customer_balance cb where customer_id = ? 
+2019-07-06 14:34:03,380 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:34:03,391 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-06 14:34:03,393 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id = (select id from discount_config where ?>=total_charge order by total_charge desc limit 1) 
+2019-07-06 14:34:03,394 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer)
+2019-07-06 14:34:03,404 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:34:08,378 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2ba75ab (No operations allowed after connection closed.)
+2019-07-06 14:34:08,387 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, total_charge, charge_amount, bestow_amount, discount, level, remark from discount_config where id!=1 
+2019-07-06 14:34:08,387 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-06 14:34:08,397 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-07-06 14:34:11,021 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:34:11,038 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:34:11,038 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:34:11,046 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:34:11,047 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:34:11,048 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:34:11,061 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:34:16,951 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:34:16,992 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:34:16,993 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:34:17,003 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:34:17,004 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:34:17,004 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:34:17,023 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:35:10,662 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:35:10,726 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:35:10,726 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:35:10,735 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:35:10,736 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:35:10,736 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:35:10,749 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:35:46,498 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:35:46,537 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:35:46,538 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:35:46,548 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:35:46,549 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:35:46,549 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:35:46,564 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:36:30,450 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:36:30,495 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:36:30,496 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:36:30,506 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:36:30,507 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:36:30,508 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:36:30,524 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:36:41,268 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:36:41,314 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:36:41,315 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:36:41,325 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:36:41,327 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:36:41,328 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:36:41,355 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:36:53,838 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:36:53,872 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:36:53,873 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:36:53,883 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:36:53,886 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:36:53,887 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:36:53,907 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:37:52,115 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:37:52,165 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:37:52,166 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:37:52,176 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:37:52,177 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:37:52,178 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:37:52,192 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:38:30,191 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:38:30,227 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:38:30,228 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:38:30,241 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:38:30,244 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:38:30,245 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:38:30,262 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:40:26,831 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-06 14:40:26,840 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 14:40:26,840 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-06 14:40:26,852 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:40:39,466 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-06 14:40:39,474 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 14:40:39,475 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-07-06 14:40:39,487 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:46:10,047 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v8L3jVgKH5FcYd60Pzy1hbM
+2019-07-06 14:46:10,058 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 14:46:10,058 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v8L3jVgKH5FcYd60Pzy1hbM(String)
+2019-07-06 14:46:10,069 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-07-06 14:46:10,251 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into customer (id, openid, phone, nickname, password, sex, country, province, city, headimgurl, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?, ?,?,?,?) 
+2019-07-06 14:46:10,253 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null, o7112v8L3jVgKH5FcYd60Pzy1hbM(String), null,  Chingching(String), null, 女(String), 阿曼(String), (String), (String), http://thirdwx.qlogo.cn/mmopen/vi_32/mLInfLqiaLaibIEKT9Uic6FPDpILUiabY2qicnk97UhUj4tNcd8GDVuRzgdH2EaCLf8icSR9siaHQsOouU6Nq9uqEHxJw/132(String), [](String), 1(String), 2019-07-07 04:46:10.0(Timestamp), 2019-07-07 04:46:10.0(Timestamp), null, null, null, 3(Integer), 0(Integer), 0(Integer), null, null, null, null, null
+2019-07-06 14:46:10,274 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-07-06 14:46:10,275 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-07-06 14:46:10,276 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-06 14:46:10,284 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:47:15,603 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:47:15,635 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:47:15,635 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:47:15,644 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:47:15,644 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:47:15,645 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:47:15,662 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:47:25,725 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:47:25,741 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:47:25,742 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:47:25,751 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:47:25,752 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:47:25,753 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:47:25,767 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:47:36,288 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:47:36,322 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:47:36,323 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:47:36,333 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:47:36,334 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:47:36,334 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:47:36,349 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:48:03,545 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:48:03,604 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:48:03,604 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:48:03,614 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:48:03,615 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:48:03,615 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:48:03,628 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:48:12,564 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:48:12,591 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:48:12,591 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:48:12,601 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:48:12,601 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:48:12,602 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:48:12,616 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:48:21,599 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:48:21,625 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:48:21,625 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:48:21,635 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:48:21,637 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:48:21,638 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:48:21,653 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:48:29,844 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:48:29,868 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:48:29,869 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:48:29,878 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:48:29,879 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:48:29,880 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:48:29,894 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:49:59,375 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:49:59,408 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:49:59,409 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:49:59,419 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:49:59,420 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:49:59,421 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:49:59,437 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:50:12,117 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:50:12,155 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:50:12,156 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:50:12,166 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:50:12,168 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:50:12,169 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:50:12,185 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:50:21,500 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:50:21,534 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:50:21,535 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:50:21,544 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:50:21,545 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:50:21,546 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:50:21,560 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:50:31,568 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:50:31,599 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:50:31,600 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:50:31,611 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:50:31,612 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:50:31,612 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:50:31,628 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:52:01,269 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:52:01,288 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:52:01,289 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:52:01,298 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:52:01,299 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:52:01,300 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:52:01,314 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:52:55,482 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:52:55,515 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:52:55,516 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:52:55,525 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:52:55,527 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:52:55,528 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:52:55,547 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:53:18,071 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:53:18,111 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:53:18,112 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:53:18,123 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:53:18,125 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:53:18,126 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:53:18,139 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:53:26,409 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:53:26,425 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:53:26,426 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:53:26,435 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:53:26,435 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:53:26,436 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:53:26,451 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:54:25,996 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:54:26,042 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:54:26,043 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:54:26,053 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:54:26,055 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:54:26,056 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:54:26,069 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:54:36,279 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:54:36,316 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:54:36,317 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:54:36,326 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:54:36,328 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:54:36,328 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:54:36,343 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:56:07,339 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:56:12,379 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1e673bf6 (No operations allowed after connection closed.)
+2019-07-06 14:56:14,529 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:56:17,385 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@52cb2267 (No operations allowed after connection closed.)
+2019-07-06 14:56:19,541 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@63ca8cf9 (No operations allowed after connection closed.)
+2019-07-06 14:56:22,389 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7e63b542 (No operations allowed after connection closed.)
+2019-07-06 14:56:24,589 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5d8bc589 (No operations allowed after connection closed.)
+2019-07-06 14:56:24,597 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:56:24,598 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:56:24,608 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:56:24,609 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:56:24,609 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:56:24,624 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:56:27,395 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@44b89014 (No operations allowed after connection closed.)
+2019-07-06 14:56:27,407 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:56:27,408 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:56:27,420 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:56:27,425 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:56:27,427 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:56:27,447 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:57:44,240 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:57:44,283 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:57:44,284 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:57:44,293 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:57:44,295 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:57:44,296 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:57:44,314 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 14:59:00,897 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 14:59:00,939 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 14:59:00,940 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 14:59:00,958 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 14:59:00,961 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 14:59:00,962 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 14:59:00,977 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:02:50,775 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:02:50,792 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:02:50,792 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:02:50,802 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:02:50,803 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:02:50,803 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:02:50,817 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:02:56,186 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:02:56,204 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:02:56,204 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:02:56,213 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:02:56,215 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:02:56,215 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:02:56,229 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:03:34,756 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v8L3jVgKH5FcYd60Pzy1hbM
+2019-07-06 15:03:34,768 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 15:03:34,769 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v8L3jVgKH5FcYd60Pzy1hbM(String)
+2019-07-06 15:03:34,784 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:04:43,608 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:04:43,634 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:04:43,634 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:04:43,644 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:04:43,645 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:04:43,646 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:04:43,661 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:05:02,844 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v8L3jVgKH5FcYd60Pzy1hbM
+2019-07-06 15:05:02,853 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 15:05:02,854 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v8L3jVgKH5FcYd60Pzy1hbM(String)
+2019-07-06 15:05:02,867 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:05:44,022 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:05:44,077 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:05:44,078 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:05:44,090 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:05:44,092 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:05:44,092 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:05:44,108 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:07:10,399 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v8L3jVgKH5FcYd60Pzy1hbM
+2019-07-06 15:07:10,408 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 15:07:10,408 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v8L3jVgKH5FcYd60Pzy1hbM(String)
+2019-07-06 15:07:10,420 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:07:44,009 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v8L3jVgKH5FcYd60Pzy1hbM
+2019-07-06 15:07:44,020 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-07-06 15:07:44,021 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v8L3jVgKH5FcYd60Pzy1hbM(String)
+2019-07-06 15:07:44,034 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:10:09,310 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:10:09,356 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:10:09,358 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:10:09,369 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:10:09,373 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:10:09,375 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:10:09,390 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:10:37,925 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:10:37,958 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:10:37,959 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:10:37,969 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:10:37,970 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:10:37,971 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:10:37,985 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:11:32,929 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:11:32,954 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:11:32,955 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:11:32,966 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:11:32,966 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:11:32,966 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:11:32,981 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:11:37,887 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:11:37,902 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:11:37,902 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:11:37,913 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:11:37,914 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:11:37,915 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:11:37,929 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:12:22,334 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:12:22,352 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:12:22,353 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:12:22,363 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:12:22,363 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:12:22,364 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:12:22,387 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:12:45,262 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:12:45,295 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:12:45,296 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:12:45,306 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:12:45,308 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:12:45,310 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:12:45,325 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:14:36,960 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:14:36,993 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:14:36,994 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:14:37,004 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:14:37,005 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:14:37,006 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:14:37,021 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:15:16,465 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:15:16,507 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:15:16,508 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:15:16,519 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:15:16,521 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:15:16,522 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:15:16,537 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:16:02,922 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:16:02,971 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:16:02,971 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:16:02,982 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:16:02,983 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:16:02,983 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:16:02,998 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:16:41,530 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:16:41,563 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:16:41,565 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:16:41,576 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:16:41,579 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:16:41,580 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:16:41,595 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:17:01,825 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:17:01,855 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:17:01,856 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:17:01,866 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:17:01,866 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:17:01,866 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:17:01,884 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:17:56,960 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:17:57,010 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:17:57,011 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:17:57,023 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:17:57,024 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:17:57,025 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:17:57,040 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 15:21:12,679 INFO (CouponController.java:255)- 查询领取优惠券的用户列表CouponCustomerRelevance:1736
+2019-07-06 15:21:12,710 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT count(0) FROM coupon_customer_relevance ccr LEFT JOIN coupon cp ON ccr.coupon_id = cp.id WHERE customer_id = ? 
+2019-07-06 15:21:12,710 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer)
+2019-07-06 15:21:12,720 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-07-06 15:21:12,721 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time,ccr.valid_end_time as valid_end_time , use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id where customer_id = ? order by state,discount_amount desc,valid_end_time desc LIMIT ? 
+2019-07-06 15:21:12,721 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1736(Integer), 100(Integer)
+2019-07-06 15:21:12,736 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-07-06 18:19:07,736 INFO (CustomerCotroller.java:365)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-07-06 18:19:12,745 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7aa2115c (No operations allowed after connection closed.)
+2019-07-06 18:19:17,855 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@db554c1 (No operations allowed after connection closed.)
+2019-07-06 18:19:22,862 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@761a041d (No operations allowed after connection closed.)
+2019-07-06 18:19:27,868 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1c58d373 (No operations allowed after connection closed.)
+2019-07-06 18:19:32,875 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3e546d86 (No operations allowed after connection closed.)
+2019-07-06 18:19:37,888 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@42d1279c (No operations allowed after connection closed.)
+2019-07-06 18:19:37,901 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] in context with path [/gogirl_user] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30152ms.
+### The error may exist in file [E:\Workspaces\gogirl_user\target\classes\mapper\CustomerMapper.xml]
+### The error may involve com.gogirl.gogirl_user.dao.CustomerMapper.selectByOpenid
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30152ms.] with root cause
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1184)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1179)
+	at com.mysql.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:5483)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:541)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:162)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:148)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy97.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy65.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy66.selectByOpenid(Unknown Source)
+	at com.gogirl.gogirl_user.service.CustomerService.selectByOpenid(CustomerService.java:193)
+	at com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByOpenid(CustomerCotroller.java:367)
+	at sun.reflect.GeneratedMethodAccessor248.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)

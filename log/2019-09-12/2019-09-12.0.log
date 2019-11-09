@@ -1,0 +1,674 @@
+2019-09-12 14:51:20,811 INFO (StartupInfoLogger.java:50)- Starting GogirlUserApplication on DESKTOP-3NQBCGR with PID 12920 (E:\Workspaces\gogirl_user\target\classes started by bailun in E:\Workspaces\gogirl_user)
+2019-09-12 14:51:20,818 INFO (SpringApplication.java:663)- The following profiles are active: dev
+2019-09-12 14:51:20,970 INFO (AbstractApplicationContext.java:590)- Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6622fc65: startup date [Thu Sep 12 14:51:20 CST 2019]; root of context hierarchy
+2019-09-12 14:51:25,042 INFO (TomcatWebServer.java:91)- Tomcat initialized with port(s): 8089 (http)
+2019-09-12 14:51:25,063 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8089"]
+2019-09-12 14:51:25,089 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2019-09-12 14:51:25,090 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-09-12 14:51:25,113 INFO (DirectJDKLog.java:180)- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_181/bin/server;C:/Program Files/Java/jre1.8.0_181/bin;C:/Program Files/Java/jre1.8.0_181/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Python3\;D:\Python3\Scripts;C:\ProgramData\Boxstarter;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\Java\jdk1.8.0_161\bin;D:\Java\jdk1.8.0_161\jre\bin;D:\Java\apache-maven-3.5.3\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\node_global\;C:\Program Files (x86)\HP\Unified Functional Testing\bin;C:\Program Files\nodejs\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\bailun\AppData\Local\Microsoft\WindowsApps;C:\Users\bailun\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;D:\workapp\eclipse;;.]
+2019-09-12 14:51:25,441 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2019-09-12 14:51:25,441 INFO (ServletWebServerApplicationContext.java:285)- Root WebApplicationContext: initialization completed in 4471 ms
+2019-09-12 14:51:25,779 INFO (ServletRegistrationBean.java:186)- Servlet dispatcherServlet mapped to [/]
+2019-09-12 14:51:25,789 INFO (AbstractFilterRegistrationBean.java:245)- Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-09-12 14:51:25,790 INFO (AbstractFilterRegistrationBean.java:245)- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-09-12 14:51:25,791 INFO (AbstractFilterRegistrationBean.java:245)- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-09-12 14:51:25,791 INFO (AbstractFilterRegistrationBean.java:245)- Mapping filter: 'requestContextFilter' to: [/*]
+2019-09-12 14:51:27,525 WARN (HikariConfig.java:1081)- HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-12 14:51:27,528 INFO (HikariDataSource.java:110)- HikariPool-1 - Starting...
+2019-09-12 14:51:27,991 INFO (HikariDataSource.java:123)- HikariPool-1 - Start completed.
+2019-09-12 14:51:28,003 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, type, name, value, remark from gogirl_config where type = ? 
+2019-09-12 14:51:28,041 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: gogirl_user(String)
+2019-09-12 14:51:28,119 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2019-09-12 14:51:28,123 INFO (GogirlProperties.java:58)- 成功加载gogirl_config表配置:[GogirlConfig [id=41, type=gogirl_user, name=order_url, value=http://127.0.0.1:8084/, remark=user转发到order], GogirlConfig [id=42, type=gogirl_user, name=mp_url, value=http://127.0.0.1:8088/, remark=user转发到mp]]
+2019-09-12 14:51:29,042 INFO (AbstractUrlHandlerMapping.java:373)- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-12 14:51:29,566 INFO (RequestMappingHandlerAdapter.java:574)- Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6622fc65: startup date [Thu Sep 12 14:51:20 CST 2019]; root of context hierarchy
+2019-09-12 14:51:29,812 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getActivityChanceCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getActivityChanceCustomer(int)
+2019-09-12 14:51:29,814 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getJoinActiveCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getJoinActiveCustomer(java.lang.Integer,java.lang.Integer,java.lang.String)
+2019-09-12 14:51:29,815 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByActivityPrize]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.selectByActivityPrize(java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,815 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectAllPrize]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.selectAllPrize()
+2019-09-12 14:51:29,816 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getMyFokas]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getMyFokas(int)
+2019-09-12 14:51:29,817 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getNewPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getNewPrizeList()
+2019-09-12 14:51:29,817 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/setJiaTe]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.setJiaTe(java.lang.Integer)
+2019-09-12 14:51:29,819 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/openFoka]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.openFoka(java.lang.Integer)
+2019-09-12 14:51:29,819 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/openBigFoka]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.openBigFoka(java.lang.Integer)
+2019-09-12 14:51:29,820 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/dailySign]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.dailySign(int)
+2019-09-12 14:51:29,820 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/mergeFokas]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.mergeFokas()
+2019-09-12 14:51:29,821 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/girlFriendsHelp]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.girlFriendsHelp(int,int)
+2019-09-12 14:51:29,821 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.getPrizeList(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,822 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/myPrizeList]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.myPrizeList(java.lang.Integer)
+2019-09-12 14:51:29,823 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/setPrizeState]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ActiveCotroller.setPrizeState(java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,826 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/chargeBalanceWechat]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.chargeBalanceWechat(javax.servlet.http.HttpServletRequest,java.lang.String,int,java.lang.String)
+2019-09-12 14:51:29,828 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getBalanceRecordCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalanceRecordCard(com.gogirl.gogirl_user.entity.CustomerBalanceRecord,int,int)
+2019-09-12 14:51:29,829 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/consumeBalanceOpenid]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeBalanceOpenid(javax.servlet.http.HttpServletRequest,java.lang.String,int,java.lang.String,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,831 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/consumeBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeBalance(javax.servlet.http.HttpServletRequest,int,int,java.lang.String,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,832 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/chargeBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.chargeBalance(javax.servlet.http.HttpServletRequest,int,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+2019-09-12 14:51:29,833 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/consumeWechat]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.consumeWechat(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer)
+2019-09-12 14:51:29,836 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/withdrawBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.withdrawBalance(java.lang.String,java.lang.Integer)
+2019-09-12 14:51:29,837 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getBalanceRecord]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalanceRecord(com.gogirl.gogirl_user.entity.CustomerBalanceRecord,int,int)
+2019-09-12 14:51:29,838 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getBalance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.getBalance(javax.servlet.http.HttpServletRequest,int)
+2019-09-12 14:51:29,839 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/newCustomerCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.BalanceController.newCustomerCard(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+2019-09-12 14:51:29,840 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countCategorySalesRatio]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCategorySalesRatio(java.lang.Integer,java.util.Date,java.util.Date)
+2019-09-12 14:51:29,841 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countUnRecordCustomerInfoNum]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countUnRecordCustomerInfoNum(java.lang.Integer)
+2019-09-12 14:51:29,842 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countCustomerUnitPrice]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCustomerUnitPrice(java.lang.Integer,java.util.Date,java.util.Date)
+2019-09-12 14:51:29,842 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countCustomerInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countCustomerInfo(java.lang.Integer,java.util.Date,java.util.Date)
+2019-09-12 14:51:29,844 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countRepeatPurchaseRate]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CountCotroller.countRepeatPurchaseRate(java.lang.Integer,java.util.Date,java.util.Date)
+2019-09-12 14:51:29,846 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/updateCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.updateByPrimaryKeySelective(com.gogirl.gogirl_user.entity.Coupon)
+2019-09-12 14:51:29,847 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertCouponCustomerRelevance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.insertCouponCustomerRelevance(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,848 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectCouponByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectCouponByPrimaryKey(java.lang.Integer)
+2019-09-12 14:51:29,849 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectRelevanceByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectRelevanceByPrimaryKey(java.lang.Integer)
+2019-09-12 14:51:29,849 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/enablingStoppingCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.enablingStoppingCoupon(java.lang.Integer)
+2019-09-12 14:51:29,850 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCouponCustomerRelevance]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectByCouponCustomerRelevance(com.gogirl.gogirl_user.entity.CouponCustomerRelevance,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,851 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/registerSendCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.registerSendCoupon(java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,853 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/sendTicketAfterOrder]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.sendTicketAfterOrder(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.Integer,java.lang.Double)
+2019-09-12 14:51:29,853 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectByCoupon(com.gogirl.gogirl_user.entity.Coupon,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,853 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectMyCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.selectMyCoupon(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,854 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.insertCoupon(com.gogirl.gogirl_user.entity.Coupon)
+2019-09-12 14:51:29,855 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/sendCoupons]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.sendCoupons(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,855 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getAllCoupon]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CouponController.getAllCoupon()
+2019-09-12 14:51:29,859 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCustomerWithStoreAndCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStoreAndCard(java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,859 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerWithPhone]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerWithPhone(com.gogirl.gogirl_user.entity.Customer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,860 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerByOpenid/{openid}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByOpenid(java.lang.String)
+2019-09-12 14:51:29,861 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertOrUpdateCustomerDetail]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertOrUpdateCustomerDetail(com.gogirl.gogirl_user.entity.CustomerDetail)
+2019-09-12 14:51:29,862 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/mergeRemoveCustomer/{id}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.mergeRemoveCustomer(java.lang.String)
+2019-09-12 14:51:29,862 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/updateCustomerSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateCustomerSelective(com.gogirl.gogirl_user.entity.Customer)
+2019-09-12 14:51:29,863 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/minusScheduledTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.minusScheduledTimes(java.lang.Integer,java.lang.String)
+2019-09-12 14:51:29,864 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertOrUpdateCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertOrUpdateCustomer(com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,java.lang.String)
+2019-09-12 14:51:29,864 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/mergeDeleteCustomerByPhone/{phone}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.mergeDeleteCustomerByPhone(java.lang.String)
+2019-09-12 14:51:29,865 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerByPrimaryKey/{id}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPrimaryKey(java.lang.String)
+2019-09-12 14:51:29,865 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerByPrimaryKey2]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPrimaryKey2(java.lang.String)
+2019-09-12 14:51:29,866 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerByPhone/{phone}]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerByPhone(java.lang.String)
+2019-09-12 14:51:29,867 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCustomerWithStore]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStore(java.lang.Integer,java.lang.Integer,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,867 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCustomerCard]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerCard(java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,868 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomerDetailById]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomerDetailById(java.lang.Integer)
+2019-09-12 14:51:29,868 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.insertCustomer(com.gogirl.gogirl_user.entity.Customer)
+2019-09-12 14:51:29,868 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/minusOrderTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.minusOrderTimes(java.lang.Integer,java.lang.String)
+2019-09-12 14:51:29,869 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/updateRemark]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateRemark(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2019-09-12 14:51:29,869 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.getCustomer(com.gogirl.gogirl_user.entity.Customer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,870 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/updateCustomer]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.updateCustomer(com.gogirl.gogirl_user.entity.Customer)
+2019-09-12 14:51:29,870 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/addOrderTimes]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.addOrderTimes(java.lang.Integer,java.lang.String,java.lang.String)
+2019-09-12 14:51:29,872 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCustomerWithStoreAndCardAndDetail]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerCotroller.selectByCustomerWithStoreAndCardAndDetail(java.lang.String,java.lang.String,java.lang.String,com.gogirl.gogirl_user.entity.Customer,java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,875 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/photo/delete]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.delete(com.gogirl.gogirl_user.entity.CustomerNailPhoto)
+2019-09-12 14:51:29,875 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/photo/insertOrUpdateSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.insertOrUpdateSelective(com.gogirl.gogirl_user.entity.CustomerNailPhoto)
+2019-09-12 14:51:29,876 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/photo/selectByCustomerNailPhoto]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.CustomerNailPhotoCotroller.selectByCustomerNailPhoto(com.gogirl.gogirl_user.entity.CustomerNailPhoto,java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,879 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/count]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.count(java.lang.Integer,java.lang.Integer,java.lang.Double)
+2019-09-12 14:51:29,880 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/updateByPrimaryKeySelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.updateByPrimaryKeySelective(com.gogirl.gogirl_user.entity.DiscountConfig)
+2019-09-12 14:51:29,881 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByTotalCharge]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByTotalCharge(int)
+2019-09-12 14:51:29,882 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/deleteByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.deleteByPrimaryKey(java.lang.Integer)
+2019-09-12 14:51:29,883 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectAllDiscount]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectAllDiscount()
+2019-09-12 14:51:29,884 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByPrimaryKey]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByPrimaryKey(java.lang.Integer)
+2019-09-12 14:51:29,885 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectByCharge]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectByCharge(int)
+2019-09-12 14:51:29,886 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/couponUse]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.couponUse(java.lang.Integer)
+2019-09-12 14:51:29,886 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/countPay]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.countPay(java.lang.Integer,java.lang.Integer,java.lang.Double)
+2019-09-12 14:51:29,887 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectDiscount]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.selectDiscount(java.lang.Integer,java.lang.Integer)
+2019-09-12 14:51:29,889 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertSelective]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.DiscountConfigController.insertSelective(com.gogirl.gogirl_user.entity.DiscountConfig)
+2019-09-12 14:51:29,890 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/plusIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.plusIntegral(javax.servlet.http.HttpServletRequest,int,int,java.lang.String)
+2019-09-12 14:51:29,891 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/minusIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.minusIntegral(javax.servlet.http.HttpServletRequest,int,int,java.lang.String)
+2019-09-12 14:51:29,892 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/getIntegral]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.IntegralController.getIntegral(javax.servlet.http.HttpServletRequest,int)
+2019-09-12 14:51:29,892 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/insertOrUpdateReceiveInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ReceiveInfoController.insertOrUpdateSelective(com.gogirl.gogirl_user.entity.CustomerReceiveInfo)
+2019-09-12 14:51:29,893 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/selectReceiveInfo]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.ReceiveInfoController.selectByPrimaryKey(java.lang.Integer)
+2019-09-12 14:51:29,894 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/weiboLogin]}" onto public com.gogirl.gogirl_user.entity.JsonResult com.gogirl.gogirl_user.controller.WeiboController.weiboLogin(java.lang.String,java.lang.String)
+2019-09-12 14:51:29,894 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/weiboInfo]}" onto public java.lang.String com.gogirl.gogirl_user.controller.WeiboController.weiboInfo(java.lang.String,java.lang.String)
+2019-09-12 14:51:29,899 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-09-12 14:51:29,900 INFO (AbstractHandlerMethodMapping.java:547)- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-12 14:51:29,971 INFO (AbstractUrlHandlerMapping.java:373)- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-12 14:51:29,972 INFO (AbstractUrlHandlerMapping.java:373)- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-12 14:51:31,156 INFO (MBeanExporter.java:433)- Registering beans for JMX exposure on startup
+2019-09-12 14:51:31,163 INFO (MBeanExporter.java:895)- Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-09-12 14:51:31,177 INFO (MBeanExporter.java:668)- Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-09-12 14:51:31,211 INFO (ScheduledAnnotationBeanPostProcessor.java:275)- No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-09-12 14:51:31,243 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8089"]
+2019-09-12 14:51:31,270 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2019-09-12 14:51:31,345 INFO (TomcatWebServer.java:206)- Tomcat started on port(s): 8089 (http) with context path '/gogirl_user'
+2019-09-12 14:51:31,358 INFO (StartupInfoLogger.java:59)- Started GogirlUserApplication in 11.485 seconds (JVM running for 12.69)
+2019-09-12 15:02:29,571 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-09-12 15:02:29,572 INFO (FrameworkServlet.java:494)- FrameworkServlet 'dispatcherServlet': initialization started
+2019-09-12 15:02:30,434 INFO (FrameworkServlet.java:509)- FrameworkServlet 'dispatcherServlet': initialization completed in 862 ms
+2019-09-12 15:02:30,649 INFO (CustomerCotroller.java:367)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-09-12 15:02:30,670 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-09-12 15:02:30,672 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-09-12 15:02:30,709 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:02:31,066 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into customer (id, openid, phone, nickname, password, sex, country, province, city, headimgurl, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?, ?,?,?,?) 
+2019-09-12 15:02:31,070 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null, o7112v0qdTRxqTk7ABNIhAjYSEEU(String), null, Christy(String), null, 女(String), 奥地利(String), 克恩顿(String), (String), http://thirdwx.qlogo.cn/mmopen/vi_32/agMlkibzDxzGhsbdKC0pJVEc7A8FJ1kAzAAuSwJx2ibXWsu9jeCN9843wAZBTj2UDGLDs84QIQfuaIgVrdvgBWjg/132(String), [](String), 1(String), 2019-09-12 15:02:31.066(Timestamp), 2019-09-12 15:02:31.066(Timestamp), null, null, null, 3(Integer), 0(Integer), 0(Integer), null, null, null, null, null
+2019-09-12 15:02:31,089 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:02:31,090 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:02:31,091 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:02:31,096 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:02:36,293 INFO (CustomerCotroller.java:367)- 获取用户信息openid:o7112v0qdTRxqTk7ABNIhAjYSEEU
+2019-09-12 15:02:36,300 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, openid, phone, nickname, password, sex, country, province, city, headimgurl,customer_source, privilege, state, register_time, update_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name, remark,remark2,remark3,remark4,responsible_person,data_integrity from customer where openid = ? 
+2019-09-12 15:02:36,302 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: o7112v0qdTRxqTk7ABNIhAjYSEEU(String)
+2019-09-12 15:02:36,313 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:02:36,583 INFO (CustomerCotroller.java:345)- 获取用户信息id:1836
+2019-09-12 15:02:36,586 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:02:36,587 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:02:36,681 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:24,866 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:06:24,868 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:06:24,875 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:24,875 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:06:24,876 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:06:24,876 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:06:24,877 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:06:24,878 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:06:24,891 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:24,893 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:06:24,893 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:06:24,950 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:24,951 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:06:24,952 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:06:25,138 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:25,140 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:06:25,141 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.35314033836756786(Double)
+2019-09-12 15:06:25,199 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:06:25,201 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:06:25,202 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.21466670454240144(Double)
+2019-09-12 15:06:25,211 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:06:25,212 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:06:25,213 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:06:25,222 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:25,255 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:06:25,255 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 111(Integer), 61(Integer)
+2019-09-12 15:06:25,276 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:06:25,278 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:06:25,279 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:06:25.201(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:06:25,297 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:06:25,298 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:06:25,299 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:06:25,306 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:27,425 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:06:27,432 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:06:27,433 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:06:27,443 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:27,445 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:06:27,447 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:06:27,454 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:27,456 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:06:27,457 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.8615458503288408(Double)
+2019-09-12 15:06:27,464 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:06:27,468 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:06:27,469 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.8167988693914883(Double)
+2019-09-12 15:06:27,475 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:06:27,479 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:06:27,480 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:06:27,492 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:27,494 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:06:27,495 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 103(Integer), 62(Integer)
+2019-09-12 15:06:27,515 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:06:27,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:06:27,520 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:06:27.467(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:06:27,538 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:06:27,539 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:06:27,540 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:06:27,546 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:06:29,552 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:07:00,193 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:07:00,194 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:07:00,200 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:00,201 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:07:00,201 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:07:00,201 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:07:00,202 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:07:00,203 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:07:00,216 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:00,217 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:07:00,218 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:07:00,227 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:00,228 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:07:00,228 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:07:00,235 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:00,236 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:07:00,237 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.40054738828721226(Double)
+2019-09-12 15:07:00,245 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:07:00,247 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:07:00,247 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.5631372117999655(Double)
+2019-09-12 15:07:00,253 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:07:00,254 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:07:00,255 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:07:00,263 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:00,264 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:07:00,265 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 112(Integer), 61(Integer)
+2019-09-12 15:07:00,280 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:07:00,281 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:07:00,283 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:07:00.246(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:07:00,303 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:07:00,304 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:07:00,305 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:07:00,311 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:02,315 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:07:02,320 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:07:02,321 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:07:02,330 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:02,331 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:07:02,332 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:07:02,339 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:02,340 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:07:02,341 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.7419772225491826(Double)
+2019-09-12 15:07:02,347 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:07:02,349 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:07:02,350 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.5891180731581502(Double)
+2019-09-12 15:07:02,356 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:07:02,357 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:07:02,359 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:07:02,374 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:02,376 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:07:02,377 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 104(Integer), 62(Integer)
+2019-09-12 15:07:02,396 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:07:02,398 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:07:02,399 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:07:02.348(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:07:02,420 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:07:02,421 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:07:02,422 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:07:02,428 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:07:04,433 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:08:07,310 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:08:07,312 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:08:07,320 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:07,321 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:08:07,321 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:08:07,321 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:08:07,323 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:08:07,326 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:08:07,355 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:07,356 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:08:07,357 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:08:07,370 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:07,371 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:08:07,372 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:08:07,382 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:07,383 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:08:07,383 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.2609033033767507(Double)
+2019-09-12 15:08:07,394 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:08:07,396 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:08:07,397 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.6360027257104586(Double)
+2019-09-12 15:08:07,407 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:08:07,408 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:08:07,410 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:08:07,422 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:07,423 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:08:07,424 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 113(Integer), 61(Integer)
+2019-09-12 15:08:07,446 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:08:07,448 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:08:07,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:08:07.395(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:08:07,472 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:08:07,473 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:08:07,483 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:08:07,505 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:09,511 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:08:09,521 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:08:09,525 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:08:09,539 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:09,542 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:08:09,543 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:08:09,553 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:09,555 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:08:09,556 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.9861212281655315(Double)
+2019-09-12 15:08:09,564 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:08:09,566 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:08:09,568 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.7429684729139914(Double)
+2019-09-12 15:08:09,576 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:08:09,578 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:08:09,578 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:08:09,589 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:09,591 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:08:09,592 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 105(Integer), 62(Integer)
+2019-09-12 15:08:09,612 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:08:09,615 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:08:09,616 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:08:09.565(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:08:09,638 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:08:09,639 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:08:09,640 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:08:09,649 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:08:11,654 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:09:18,196 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:09:18,198 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:18,204 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:18,205 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:09:18,205 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:09:18,206 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:09:18,207 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:09:18,207 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:09:18,220 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:18,221 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:18,222 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:09:18,230 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:18,232 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:09:18,233 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:09:18,240 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:18,241 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:18,242 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.7630533184131127(Double)
+2019-09-12 15:09:18,250 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:18,252 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:18,253 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.09756192635709582(Double)
+2019-09-12 15:09:18,259 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:18,261 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:18,261 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:09:18,269 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:18,272 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:09:18,273 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 114(Integer), 61(Integer)
+2019-09-12 15:09:18,287 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:18,289 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:09:18,290 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:09:18.252(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:09:18,306 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:18,307 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:09:18,308 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:18,312 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:20,316 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:09:20,325 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:20,325 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:09:20,335 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:20,336 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:09:20,337 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:09:20,345 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:20,347 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:20,349 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.7958852323755631(Double)
+2019-09-12 15:09:20,357 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:20,360 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:20,361 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.6482842376823962(Double)
+2019-09-12 15:09:20,369 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:20,371 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:20,373 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:09:20,392 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:20,395 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:09:20,397 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 106(Integer), 62(Integer)
+2019-09-12 15:09:20,416 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:20,420 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:09:20,423 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:09:20.359(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:09:20,442 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:20,444 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:09:20,446 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:20,453 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,228 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:09:22,229 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:22,236 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,237 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:09:22,238 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:09:22,238 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:09:22,240 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:09:22,241 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:09:22,255 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,257 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:22,258 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:09:22,268 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,269 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:09:22,270 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:09:22,279 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,280 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:22,281 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.11476649528938421(Double)
+2019-09-12 15:09:22,289 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:22,290 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:22,291 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.6061221565706654(Double)
+2019-09-12 15:09:22,300 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:22,301 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:22,302 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:09:22,313 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,315 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:09:22,317 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 115(Integer), 61(Integer)
+2019-09-12 15:09:22,370 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:22,371 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:09:22,372 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:09:22.29(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:09:22,393 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:22,393 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:09:22,394 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:22,400 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:22,461 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:09:24,408 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:09:24,415 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:24,417 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:09:24,427 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:24,430 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:09:24,432 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:09:24,441 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:24,443 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:24,444 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.42772333109283645(Double)
+2019-09-12 15:09:24,452 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:24,454 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:09:24,454 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.297933162930754(Double)
+2019-09-12 15:09:24,463 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:09:24,464 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:09:24,464 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:09:24,475 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:24,476 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:09:24,477 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 107(Integer), 62(Integer)
+2019-09-12 15:09:24,495 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:24,496 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:09:24,498 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:09:24.453(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:09:24,516 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:09:24,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:09:24,523 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:09:24,530 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:09:26,536 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:10:02,878 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:10:02,878 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:02,886 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:02,886 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:10:02,886 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:10:02,887 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:10:02,887 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:10:02,888 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:10:02,901 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:02,902 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:10:02,902 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:10:02,911 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:02,912 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:10:02,913 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:10:02,922 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:02,923 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:10:02,923 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.5071823554835958(Double)
+2019-09-12 15:10:02,932 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:10:02,934 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:10:02,937 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.3518998965555552(Double)
+2019-09-12 15:10:02,947 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:10:02,951 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:10:02,956 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:10:02,971 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:02,975 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:10:02,975 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 116(Integer), 61(Integer)
+2019-09-12 15:10:02,998 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:10:02,999 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:10:03,000 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:10:02.933(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:10:03,028 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:10:03,028 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:10:03,029 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:03,037 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:05,044 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:10:05,051 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:10:05,051 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:10:05,060 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:05,061 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:10:05,062 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:10:05,071 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:05,071 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:10:05,072 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.8849093271572704(Double)
+2019-09-12 15:10:05,080 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:10:05,081 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:10:05,081 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.9025787483473179(Double)
+2019-09-12 15:10:05,089 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:10:05,090 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:10:05,090 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:10:05,099 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:05,100 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:10:05,101 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 108(Integer), 62(Integer)
+2019-09-12 15:10:05,123 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:10:05,124 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:10:05,125 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:10:05.08(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:10:05,147 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:10:05,148 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:10:05,148 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:05,156 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:07,160 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:10:21,999 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:10:22,000 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:22,008 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:24,508 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:10:24,508 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:24,521 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:10:50,180 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select value from gogirl_config where id=1 
+2019-09-12 15:10:50,181 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:10:50,189 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:36,302 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:12:36,303 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:12:36,304 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:12:36,322 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:12:36,323 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:12:36,338 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:36,340 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:36,341 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:36,353 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:36,354 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:36,355 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:12:36,364 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:36,365 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:36,366 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.6095783184700332(Double)
+2019-09-12 15:12:36,379 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:36,380 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:36,381 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.29979433111368714(Double)
+2019-09-12 15:12:36,390 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:36,392 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:36,392 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:36,402 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:36,404 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:36,404 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 117(Integer), 61(Integer)
+2019-09-12 15:12:36,429 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:36,430 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:36,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:12:36.379(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:36,452 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:36,453 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:36,453 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:36,466 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,391 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:12:37,391 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:12:37,392 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:12:37,401 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:12:37,402 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:12:37,425 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,426 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:37,427 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:37,437 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,438 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:37,439 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:12:37,448 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,449 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:37,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.09658118458677067(Double)
+2019-09-12 15:12:37,459 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:37,459 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:37,459 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.7318122762789764(Double)
+2019-09-12 15:12:37,469 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:37,469 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:37,470 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:37,481 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,483 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:37,483 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 118(Integer), 61(Integer)
+2019-09-12 15:12:37,507 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:37,511 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:37,513 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:12:37.459(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:37,536 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:37,537 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:37,537 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:37,545 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,693 INFO (CouponController.java:164)- 发放优惠券
+2019-09-12 15:12:37,694 INFO (CouponController.java:171)- customerId:1836
+2019-09-12 15:12:37,694 INFO (CouponController.java:172)- couponId:61
+2019-09-12 15:12:37,695 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select c.id, c.openid, c.phone, c. nickname, c. password, c. sex, c. country, c. province, c. city, c. headimgurl,c.customer_source, c. privilege, c. state, c. register_time, c. update_time, c. real_name, c. birthday, c. register_department, c. source, c. scheduled_times, c.order_times, c. store_record_real_name, c. remark, c.remark2, c.remark3, c.remark4,responsible_person,data_integrity, w.customer_id as wcustomer_id,w.id as wid, w.screen_name, w.name as wname, w.province as wprovince, w.city as wcity, w.location, w.description, w.url, w.profileImage_url, w.user_domain, w.gender, w.followers_count, w.friends_count, w.statuses_count, w.favourites_count, w.created_at, w.following, w.verified, w.verified_type, w.allow_all_act_asg, w.allow_all_comment, w.follow_me, w.avatar_large, w.online_status, w.bi_followers_count, w.remark, w.lang, w.verified_reason, w.weihao, w.status_id from customer c left join customer_weibo w on c.id=w.customer_id where c.id = ? 
+2019-09-12 15:12:37,696 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer)
+2019-09-12 15:12:37,713 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,714 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:37,715 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:37,725 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,727 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:37,728 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer)
+2019-09-12 15:12:37,738 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,739 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:37,742 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.37416626016514765(Double)
+2019-09-12 15:12:37,750 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:37,751 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:37,752 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.659525423543097(Double)
+2019-09-12 15:12:37,761 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:37,762 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:37,762 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 61(Integer)
+2019-09-12 15:12:37,774 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:37,776 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:37,777 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 119(Integer), 61(Integer)
+2019-09-12 15:12:37,802 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:37,804 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:37,805 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 61(Integer), 1(Integer), 2019-09-12 15:12:37.751(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:37,853 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:37,853 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:37,854 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:37,861 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:38,471 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:12:38,482 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:38,484 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:38,496 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:38,500 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:38,503 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:12:38,514 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:38,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:38,521 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.02328496911349609(Double)
+2019-09-12 15:12:38,532 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:38,535 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:38,536 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.07609747542768797(Double)
+2019-09-12 15:12:38,544 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:38,548 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:38,549 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:38,560 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:38,565 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:38,566 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 109(Integer), 62(Integer)
+2019-09-12 15:12:38,613 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:38,616 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:38,618 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:12:38.534(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:38,645 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:38,646 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:38,647 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:38,657 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,551 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:12:39,560 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:39,561 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:39,572 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,574 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:39,574 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:12:39,585 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,586 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:39,586 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.8059777722615686(Double)
+2019-09-12 15:12:39,595 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:39,596 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:39,597 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.31754208601635403(Double)
+2019-09-12 15:12:39,607 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:39,608 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:39,609 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:39,620 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,621 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:39,622 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 110(Integer), 62(Integer)
+2019-09-12 15:12:39,649 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:39,650 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:39,651 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:12:39.595(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:39,676 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:39,677 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:39,678 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:39,684 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,864 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:12:39,865 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:39,865 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:39,876 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,876 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select count(1) from coupon_customer_relevance where customer_id = ? and coupon_id = ? 
+2019-09-12 15:12:39,877 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer)
+2019-09-12 15:12:39,885 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,886 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:39,887 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.8797223593213885(Double)
+2019-09-12 15:12:39,895 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:39,896 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select random_code from un_use_code where id>(select floor(?*(select max(id) from un_use_code))) limit 1 
+2019-09-12 15:12:39,897 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0.5566089091724508(Double)
+2019-09-12 15:12:39,905 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-09-12 15:12:39,906 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, valid_start_time, valid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, state, update_time, remark from coupon where id = ? 
+2019-09-12 15:12:39,907 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 62(Integer)
+2019-09-12 15:12:39,916 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:39,917 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon SET receive_quantity = ? where id = ? 
+2019-09-12 15:12:39,918 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 111(Integer), 62(Integer)
+2019-09-12 15:12:39,940 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:39,942 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into coupon_customer_relevance ( customer_id, coupon_id, state, receive_time, valid_start_time, valid_end_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-09-12 15:12:39,942 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1836(Integer), 62(Integer), 1(Integer), 2019-09-12 15:12:39.896(Timestamp), 2019-07-01 00:00:00.0(Timestamp), 2019-09-30 00:00:00.0(Timestamp)
+2019-09-12 15:12:39,963 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-09-12 15:12:39,964 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT @@IDENTITY AS id 
+2019-09-12 15:12:39,964 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-09-12 15:12:39,971 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-09-12 15:12:40,661 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:12:41,690 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-09-12 15:12:41,976 INFO (MyHttpPost.java:46)- I/O error on POST request for "http://127.0.0.1:8088/gogirl_mp/wx/template/getTicketMsg": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect

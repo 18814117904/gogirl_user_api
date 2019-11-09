@@ -1,0 +1,25 @@
+spring:
+   datasource:
+      url: jdbc:mysql://cdb-554jnvol.gz.tencentcdb.com:10105/bailun_bendi?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: "#7kfnymAM$Y9-Ntf"
+      driver-class-name: com.mysql.jdbc.Driver
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime : 30000
+      connection-test-query: "SELECT 1"
+      hikari: 
+         read-only: false
+         connection-timeout: 60000
+         idle-timeout: 60000
+         validation-timeout: 3000
+         max-lifetime: 60000
+         login-timeout: 5
+         maximum-pool-size: 60
+         minimum-idle: 10
+   jackson:
+      date-format: "yyyy-MM-dd HH:mm:ss"
+      time-zone: "GMT+8" 
+gogirl:
+  GOGIRLORDER: "http://192.168.0.103/gogirl_web_store/"
+  GOGIRLMP: "http://192.168.0.103:8088/"

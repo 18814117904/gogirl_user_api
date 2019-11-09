@@ -1,0 +1,14 @@
+2019-07-19 03:00:00,015 INFO (CouponService.java:190)- 每天定时任务,判断优惠券是否过期
+2019-07-19 03:00:05,067 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7564898 (No operations allowed after connection closed.)
+2019-07-19 03:00:10,080 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4beef0ab (No operations allowed after connection closed.)
+2019-07-19 03:00:15,096 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@77392134 (No operations allowed after connection closed.)
+2019-07-19 03:00:20,112 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2e160cd6 (No operations allowed after connection closed.)
+2019-07-19 03:00:25,130 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@272a25f9 (No operations allowed after connection closed.)
+2019-07-19 03:00:30,136 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6ea4c5a2 (No operations allowed after connection closed.)
+2019-07-19 12:00:00,052 INFO (CouponService.java:177)- 每天定时任务,查看优惠券是否即将过期,发起消息模板提醒
+2019-07-19 12:00:05,305 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@398888fe (No operations allowed after connection closed.)
+2019-07-19 12:00:10,310 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6cd9435f (No operations allowed after connection closed.)
+2019-07-19 12:00:15,314 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@37b547da (No operations allowed after connection closed.)
+2019-07-19 12:00:20,318 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2b1182b3 (No operations allowed after connection closed.)
+2019-07-19 12:00:25,323 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@78cea88e (No operations allowed after connection closed.)
+2019-07-19 12:00:30,331 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@427ba9d8 (No operations allowed after connection closed.)

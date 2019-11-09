@@ -1,0 +1,12 @@
+2019-07-16 03:00:00,009 INFO (CouponService.java:190)- 每天定时任务,判断优惠券是否过期
+2019-07-16 03:00:05,092 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@51e48a62 (No operations allowed after connection closed.)
+2019-07-16 03:00:10,096 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1f72464d (No operations allowed after connection closed.)
+2019-07-16 03:00:15,098 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@307c695b (No operations allowed after connection closed.)
+2019-07-16 03:00:20,100 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@64bb8995 (No operations allowed after connection closed.)
+2019-07-16 03:00:25,102 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@372a6a (No operations allowed after connection closed.)
+2019-07-16 03:00:30,106 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6606ed73 (No operations allowed after connection closed.)
+2019-07-16 10:38:34,437 INFO (CustomerCotroller.java:367)- 获取用户信息openid:o7112v-gTwp2OnTun_iBfiRz9_do
+2019-07-16 10:38:39,450 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3463cf11 (No operations allowed after connection closed.)
+2019-07-16 10:38:44,454 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3e9ba461 (No operations allowed after connection closed.)
+2019-07-16 10:38:49,458 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@51a87ef3 (No operations allowed after connection closed.)
+2019-07-16 10:38:54,460 WARN (PoolBase.java:173)- HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4a282074 (No operations allowed after connection closed.)

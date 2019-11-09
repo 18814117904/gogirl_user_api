@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gogirl.gogirl_user.dao.CountMapper" >
+
+  <select id="countCustomerBalanceNum" resultType="java.lang.Integer" >
+    select count(distinct customer_id)
+    from customer_balance
+    <where>
+      <if test="startTime != null" >
+        and first_charge_time >= #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+        and #{endTime,jdbcType=TIMESTAMP}>first_charge_time
+      </if>
+      <if test="departmentId != null" >
+        and customer_id in (select distinct customer_id from customer_balance_record where type=2 and department_id = #{departmentId,jdbcType=INTEGER})
+      </if>
+    </where>
+  </select>
+  <select id="countSumCharge" resultType="java.lang.Integer" >
+    select sum(order_amount)
+    from customer_balance_record
+    <where>
+    (type = 2 or type=1)
+      <if test="startTime != null" >
+        and time >= #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+        and #{endTime,jdbcType=TIMESTAMP}>time
+      </if>
+      <if test="departmentId != null" >
+        and department_id = #{departmentId,jdbcType=INTEGER}
+      </if><!-- customer_id in (select distinct customer_id from customer_department_relevance where department_id = #{departmentId,jdbcType=INTEGER}) -->
+    </where>
+  </select>
+  <select id="countSumBalance" resultType="java.lang.Integer" >
+    select sum(balance)
+    from customer_balance
+    <where>
+      <if test="startTime != null" >
+        and first_charge_time >= #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+        and #{endTime,jdbcType=TIMESTAMP}>first_charge_time
+      </if>
+      <if test="departmentId != null" >
+        and customer_id in (select distinct customer_id from customer_balance_record where department_id = #{departmentId,jdbcType=INTEGER})
+      </if>
+    </where>
+  </select>
+  <select id="countConsumeCustomerNum" resultType="java.lang.Integer" >
+    select count(1)
+    from customer c
+    <where>
+      <if test="startTime != null" >
+        and register_time >= #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+        and #{endTime,jdbcType=TIMESTAMP}>register_time
+      </if>
+      <if test="departmentId == null" >
+        and id in (select distinct order_user from order_manage)
+      </if>
+      <if test="departmentId != null" >
+        and id in (select distinct order_user from order_manage where department_id  = #{departmentId,jdbcType=INTEGER})
+      </if>
+    </where>
+  </select>
+  <select id="countCustomerNum" resultType="java.lang.Integer" >
+    select count(1)
+    from customer
+    <where>
+      <if test="startTime != null" >
+        and register_time >= #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+        and #{endTime,jdbcType=TIMESTAMP}>register_time
+      </if>
+      <if test="departmentId != null" >
+        and id in (select distinct customer_id from customer_department_relevance where department_id = #{departmentId,jdbcType=INTEGER})
+      </if>
+    </where>
+  </select>
+
+
+  <select id="countCategorySalesRatio" resultType="java.util.Map" >
+select type,count(type) num
+from order_serve os 
+left join base_serve bs on bs.id = os.serve_id
+<where>
+os.serve_id is not null and
+order_id in (
+select DISTINCT id from order_manage om
+<where>
+<if test="departmentId != null" >
+and om.department_id = #{departmentId,jdbcType=INTEGER}
+</if>
+<if test="startTime != null" >
+and om.create_time >= #{startTime,jdbcType=TIMESTAMP}
+</if>
+<if test="endTime != null" >
+and #{endTime,jdbcType=TIMESTAMP}>om.create_time
+</if>
+</where>
+)
+</where>
+group by bs.type
+  </select>
+  <!-- 查询复购率 -->
+  <select id="countRepeatPurchaseRate" resultType="java.lang.Double" >
+select (select count(0) from (select omn.id from order_manage omn 
+left join order_serve os on os.order_id=omn.id
+where 
+order_user in (select order_user from order_manage omo where TO_DAYS(omn.finish_time)-TO_DAYS(omo.finish_time)>30
+)
+and os.serve_id != 104
+<if test="departmentId != null" >
+and omn.department_id = #{departmentId,jdbcType=INTEGER}
+</if>
+<if test="startTime != null" >
+and omn.finish_time >= #{startTime,jdbcType=TIMESTAMP}
+</if>
+<if test="endTime != null" >
+and #{endTime,jdbcType=TIMESTAMP}>omn.finish_time
+</if>
+
+group by omn.id) tmp
+)/(
+select count(0) from order_manage om2
+<where>
+    <if test="departmentId != null" >
+      and om2.department_id = #{departmentId,jdbcType=INTEGER}
+    </if>
+    <if test="startTime != null" >
+      and om2.finish_time >= #{startTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="endTime != null" >
+      and #{endTime,jdbcType=TIMESTAMP}>om2.finish_time
+    </if>
+</where>
+)
+  </select>
+  <select id="countCustomerUnitPrice" resultType="java.util.Map" >
+    select total_price,change_price,discount_price
+    from order_manage 
+<where>
+    <if test="departmentId != null" >
+      and department_id = #{departmentId,jdbcType=INTEGER}
+    </if>
+    <if test="startTime != null" >
+      and finish_time >= #{startTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="endTime != null" >
+      and #{endTime,jdbcType=TIMESTAMP}>finish_time
+    </if>
+</where>
+  </select>
+  
+  <select id="countUnRecordCustomerInfoNum"  resultType="java.lang.Integer" >
+    select count(0)
+    from customer 
+<where>
+    (data_integrity is null or 0.8>data_integrity)
+    and id in (select distinct order_user from order_manage where finish_time>'2019-05-27'
+    <if test="departmentId != null" >
+         and department_id = #{departmentId,jdbcType=INTEGER}
+    </if>
+    )
+</where>
+  </select>
+</mapper>

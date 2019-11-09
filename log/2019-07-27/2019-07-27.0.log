@@ -1,0 +1,8 @@
+2019-07-27 03:00:00,055 INFO (CouponService.java:190)- 每天定时任务,判断优惠券是否过期
+2019-07-27 03:00:00,329 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update coupon_customer_relevance set state = 3 where state = 1 and ? > valid_end_time 
+2019-07-27 03:00:00,395 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2019-07-27 03:00:00.287(Timestamp)
+2019-07-27 03:00:00,437 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2019-07-27 12:00:00,002 INFO (CouponService.java:177)- 每天定时任务,查看优惠券是否即将过期,发起消息模板提醒
+2019-07-27 12:00:00,225 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ccr.id as id, customer_id, coupon_id, ccr.state as state, code, receive_time, ccr.valid_start_time as valid_start_time, ccr.valid_end_time as valid_end_time, use_date, ccr.remark as remark, cp.id as cpid, name, discount_amount,reaching_amount, discount_percent, type, condition1, note, valid_type, valid_date, cp.valid_start_time as cpvalid_start_time , cp.valid_end_time as cpvalid_end_time, all_quantity, receive_quantity, use_quantity, limit_quantity, cp.state as cpstate, cp.remark as cpremark, c.id as cid, openid, phone, nickname, password, sex, country, province, city, headimgurl, privilege, c.state as cstate, register_time, c.update_time as cupdate_time, real_name, birthday, register_department, source, scheduled_times,order_times, store_record_real_name from coupon_customer_relevance ccr left join coupon cp on ccr.coupon_id = cp.id left join customer c on ccr.customer_id = c.id order by receive_time desc 
+2019-07-27 12:00:00,226 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-07-27 12:00:01,557 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3013
